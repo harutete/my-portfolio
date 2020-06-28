@@ -21,7 +21,7 @@ body {
 }
 `
 
-const Layout = ({children: any}) => (
+const Layout = () => (
   <React.Fragment>
     <GlobalStyle />
   </React.Fragment>
