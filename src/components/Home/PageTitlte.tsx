@@ -2,10 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
-font-family: 'Caveat', cursive;
-text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Caveat', cursive;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+  padding-left: 50px;
 `
 const PageTitle = styled.h1`
   font-size: 10rem;
