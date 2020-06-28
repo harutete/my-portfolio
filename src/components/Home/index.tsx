@@ -7,7 +7,9 @@ import Navigation from './Navigation'
 
 const HomeContentsWrapper = styled(ContentsWrapper)`
   display: flex;
-  flex-direction: column;
+  & > * {
+    width: 50%;
+  }
 `
 const Home = () => (
   <HomeContentsWrapper>
