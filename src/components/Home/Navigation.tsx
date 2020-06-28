@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import SvgWrap from './SvgWrap'
+import { Link } from "gatsby"
 
 const Navigation: React.FC = () => {
   const NavigationWrapper = styled.nav`
@@ -18,8 +19,14 @@ const Navigation: React.FC = () => {
     position: absolute;
     left: 0;
     a {
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
       position: absolute;
       left: 100px;
+
+      color: #ffffff;
+      font-family: 'Caveat', cursive;
+      font-size: 5rem;
+      text-decoration: none;
     }
   `
   const Work = styled(NavigationItem)`
@@ -42,14 +49,6 @@ const Navigation: React.FC = () => {
       bottom: 130px;
     }
   `
-  // TODO theme設定する
-  // TODO フォントのimport見直す(themeに設定？)
-  const NavigationText = styled.a`
-    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
-    color: #ffffff;
-    font-family: 'Caveat', cursive;
-    font-size: 5rem;
-  `
 
   return (
     <NavigationWrapper>
@@ -67,7 +66,7 @@ const Navigation: React.FC = () => {
                 fill-opacity="0.8"
               />
             </SvgWrap>
-            <NavigationText>Work</NavigationText>
+            <Link to="/work">Work</Link>
           </div>
         </Work>
         <Profile>
@@ -77,9 +76,13 @@ const Navigation: React.FC = () => {
               height="817"
               viewBox="0 0 794 817"
             >
-              <path d="M614.82 608.425C543.61 766.547 439.038 773.285 280.916 702.076C122.793 630.867 40.1004 487.623 111.31 329.5C182.519 171.377 294.31 107 409.226 129.79C584.5 189 614.82 82 725.31 292.5C765.329 375.626 660.154 507.758 614.82 608.425Z" fill="#C99FFF" fill-opacity="0.8"/>
+              <path
+                d="M614.82 608.425C543.61 766.547 439.038 773.285 280.916 702.076C122.793 630.867 40.1004 487.623 111.31 329.5C182.519 171.377 294.31 107 409.226 129.79C584.5 189 614.82 82 725.31 292.5C765.329 375.626 660.154 507.758 614.82 608.425Z"
+                fill="#C99FFF"
+                fill-opacity="0.8"
+              />
             </SvgWrap>
-            <NavigationText>Profile</NavigationText>
+            <Link to="/profile">Profile</Link>
           </div>
         </Profile>
         <Contact>
@@ -89,9 +92,13 @@ const Navigation: React.FC = () => {
               height="470"
               viewBox="0 0 584 470"
             >
-              <path d="M552 387C445.191 538 454.226 436 280.809 436C107.391 436 -20.0002 398 3.49984 251.5C26.9999 105 97.4999 0.5 246.5 0.5C332.5 0.5 366.275 61.7195 426.5 107.5C454.727 128.957 509.494 150.322 533.5 170.5C604.124 229.862 588.782 335 552 387Z" fill="#9FDDFF" fill-opacity="0.8"/>
+              <path
+                d="M552 387C445.191 538 454.226 436 280.809 436C107.391 436 -20.0002 398 3.49984 251.5C26.9999 105 97.4999 0.5 246.5 0.5C332.5 0.5 366.275 61.7195 426.5 107.5C454.727 128.957 509.494 150.322 533.5 170.5C604.124 229.862 588.782 335 552 387Z"
+                fill="#9FDDFF"
+                fill-opacity="0.8"
+              />
             </SvgWrap>
-            <NavigationText>Contact</NavigationText>
+            <Link to="/contact">Contact</Link>
           </div>
         </Contact>
       </ul>
