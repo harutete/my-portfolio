@@ -37,6 +37,8 @@ const Navigation: React.FC = () => {
   `
   const Profile = styled(NavigationItem)`
     top: 50%;
+    left: auto;
+    right: -150px;
     transform: translateY(-50%);
     a {
       top: 50%;
