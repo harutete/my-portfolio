@@ -9,6 +9,7 @@ const PrimaryHeading = ({children}) => {
     font-size: 5rem;
     font-family: 'Caveat', cursive;
     text-align: center;
+    margin-top: 30px;
   `
 
   return (
