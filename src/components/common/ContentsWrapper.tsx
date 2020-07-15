@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 const ContentsWrapper:React.FC = (props) => {
   const Wrap = styled.div`
+    display: flex;
+    align-items: center;
     overflow: hidden;
     position: relative;
     height: 100vh;

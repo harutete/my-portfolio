@@ -6,7 +6,6 @@ import PagetitleWrapper from './PageTitlte'
 import Navigation from './Navigation'
 
 const HomeContentsWrapper = styled(ContentsWrapper)`
-  display: flex;
   & > * {
     width: 50%;
   }

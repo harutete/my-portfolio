@@ -6,10 +6,8 @@ const PrimaryHeading = ({children}) => {
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
     color: #ffffff;
-    font-size: 5rem;
+    font-size: 10rem;
     font-family: 'Caveat', cursive;
-    text-align: center;
-    margin-top: 30px;
   `
 
   return (
