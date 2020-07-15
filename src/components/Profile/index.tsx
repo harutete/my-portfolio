@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ContentsWrapper from '../common/ContentsWrapper'
+import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 
-const ProfileContentsWrapper = styled(ContentsWrapper)`
+const ProfileContentsWrapper = styled(detailContentsWrapper)`
   background: rgba(201, 159, 255, 0.8);
 `
 const Profile = () => (

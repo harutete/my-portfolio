@@ -6,7 +6,6 @@ import { Link } from "gatsby"
 const Navigation: React.FC = () => {
   const NavigationWrapper = styled.nav`
     position: relative;
-    height: 100%;
   `
   const rotate = keyframes`
     from {

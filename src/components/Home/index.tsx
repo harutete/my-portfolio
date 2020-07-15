@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ContentsWrapper from '../common/ContentsWrapper'
+import { ContentsWrapper } from '../common/ContentsWrapper'
 import PagetitleWrapper from './PageTitlte'
 import Navigation from './Navigation'
 
