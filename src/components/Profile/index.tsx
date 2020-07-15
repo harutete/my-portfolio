@@ -35,7 +35,7 @@ const Profile = () => (
     </dl>
     <ul>
       <li>
-        <a href="">
+        <a href="https://github.com/harutete" target="_blank">
           <img src={'/ico_github.png'} alt="" />
         </a>
       </li>
