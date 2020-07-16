@@ -22,6 +22,7 @@ body {
     "Hiragino Sans",
     Meiryo,
     sans-serif;
+}
 `
 
 const Layout = () => (
