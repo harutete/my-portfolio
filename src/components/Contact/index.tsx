@@ -14,13 +14,16 @@ const AddressText = styled.p`
 const AnnotationText = styled.p`
   font-size: 1.2rem;
   margin-top: 10px;
+  sup {
+    margin-right: 5px;
+  }
 `
 
 const Contact = () => (
   <ContactContentsWrapper>
     <PrimaryHeading>Contact</PrimaryHeading>
     <AddressText>ai.takeuchi.10 [at] gmail.com</AddressText>
-    <AnnotationText><sup>*</sup> at → @</AnnotationText>
+    <AnnotationText><sup>*</sup>at → @</AnnotationText>
   </ContactContentsWrapper>
 )
 
