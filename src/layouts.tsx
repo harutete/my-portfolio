@@ -1,7 +1,6 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import "typeface-caveat"
-import "typeface-roboto"
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -17,8 +16,12 @@ const GlobalStyle = createGlobalStyle`
 body {
   background: #FFFAF3;
   color: #333333;
-  font-family: 'Roboto', sans-serif;
-}
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 `
 
 const Layout = () => (

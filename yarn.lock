@@ -12175,11 +12175,6 @@ typeface-caveat@^0.0.76:
   resolved "https://registry.yarnpkg.com/typeface-caveat/-/typeface-caveat-0.0.76.tgz#dabfb1bfe26a0a18c81bf6a5dc0d215e1074674f"
   integrity sha512-0xboZn4Jk6J4cOUeGL+F9csUQ8VMPTcuIVg7/GksfVV2RpY5A8yPkYF310puQmDSCGgIxfKdZo7DxD1/HhyaPQ==
 
-typeface-roboto@^0.0.75:
-  version "0.0.75"
-  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.75.tgz#98d5ba35ec234bbc7172374c8297277099cc712b"
-  integrity sha512-VrR/IiH00Z1tFP4vDGfwZ1esNqTiDMchBEXYY9kilT6wRGgFoCAlgkEUMHb1E3mB0FsfZhv756IF0+R+SFPfdg==
-
 typescript@^3.7.2, typescript@^3.9.2:
   version "3.9.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.3.tgz#d3ac8883a97c26139e42df5e93eeece33d610b8a"
