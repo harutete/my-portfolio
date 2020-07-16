@@ -20,6 +20,7 @@ export const detailContentsWrapper:React.FC = (props) => {
     flex-direction: column;
     justify-content: center;
     color: #ffffff;
+    padding: 50px;
   `
 
   return (
