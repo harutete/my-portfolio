@@ -19,7 +19,6 @@ const Navigation: React.FC = () => {
     position: absolute;
     left: 0;
     a {
-      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
       position: absolute;
       left: 100px;
 

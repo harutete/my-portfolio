@@ -1,9 +1,9 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import "typeface-caveat"
+import "typeface-roboto"
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-
 :root {
   font-size: 62.5%;
 }
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 body {
   background: #FFFAF3;
   color: #333333;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 `
 

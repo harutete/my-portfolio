@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
-
   display: flex;
   flex-direction: column;
   justify-content: center;
