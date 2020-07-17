@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Modal from 'react-modal';
 import myWorks from '../../../content/myWorks.json'
@@ -85,14 +85,19 @@ const ModalIcon = styled.button`
     height: 2px;
   }
 `
+Modal.setAppElement('#___gatsby')
 const Work = () => {
+  const [ isModalOpen, setIsModalOpen ] = useState(false)
+  const openModal = () => {
+    setIsModalOpen(true)
+  }
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
   const tagStyle = (color: string) => ({
     borderColor: color,
     color: color
   })
-  const openModal = (event) => {
-    console.log(event.currentTarget.getAttribute('data-work-id'))
-  }
   return (
     <WorkContentsWrapper>
       <PrimaryHeading>Work</PrimaryHeading>
@@ -115,6 +120,7 @@ const Work = () => {
           </Card>
         )}
       </CardWrap>
+      <Modal isOpen={isModalOpen}></Modal>
     </WorkContentsWrapper>
   )
 }
