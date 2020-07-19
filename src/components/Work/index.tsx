@@ -135,8 +135,9 @@ const Work = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
   const [ currentModalContents, setCurrentModalContents ] = useState(null)
   const openModal = (event) => {
-    const currentContentsId = event.currentTarget.getAttribute('data-work-id')
-    setCurrentModalContents(myWorks.works[currentContentsId])
+    const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
+    const currentContent = myWorks.works.find(work => work.id === currentContentId)
+    setCurrentModalContents(currentContent)
     setIsModalOpen(true)
   }
   const closeModal = () => {
@@ -175,9 +176,20 @@ const Work = () => {
         style={modalStyle}
       >
         <CloseModalButton onClick={closeModal} aria-label="閉じる"></CloseModalButton>
-        {isModalOpen &&
+        {(isModalOpen && currentModalContents)　&&
           <>
-            <p>{currentModalContents.name}</p>
+            <p>{currentModalContents.description}</p>
+            <dl>
+              <dt>使用言語</dt>
+              <dd>
+                <ul>
+                  {
+                    currentModalContents.tags.map((tag, index) =>
+                    <li key={`tag_${index}`}>{tag.name}</li>
+                  )}
+                </ul>
+              </dd>
+            </dl>
             {currentModalContents.link && <a href={currentModalContents.link}>Code on Github</a>}
           </>
         }
