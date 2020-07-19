@@ -6,6 +6,8 @@ import myWorks from '../../../content/myWorks.json'
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 
+Modal.setAppElement('#___gatsby')
+
 const WorkContentsWrapper = styled(detailContentsWrapper)`
   background: rgba(255, 205, 159, 0.8);
 `
@@ -85,13 +87,60 @@ const ModalIcon = styled.button`
     height: 2px;
   }
 `
-Modal.setAppElement('#___gatsby')
+const CloseModalButton = styled.button`
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: none;
+  width: 30px;
+  height: 30px;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateY(-50%);
+    background: #333333;
+    border-radius: 3px;
+    width: 2px;
+    height: 30px;
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after {
+    transform: rotate(45deg);
+  }
+`
+const modalStyle = {
+  overlay: {
+    backgroundColor: 'rgba(102, 102, 102, 0.4)',
+  },
+  content: {
+    border: 'none',
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    width: '80%',
+    maxWidth: '800px',
+    padding: '50px 20px 20px'
+  }
+}
 const Work = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
-  const openModal = () => {
+  const [ currentModalContents, setCurrentModalContents ] = useState(null)
+  const openModal = (event) => {
+    const currentContentsId = event.currentTarget.getAttribute('data-work-id')
+    setCurrentModalContents(myWorks.works[currentContentsId])
     setIsModalOpen(true)
   }
   const closeModal = () => {
+    setCurrentModalContents(null)
     setIsModalOpen(false)
   }
   const tagStyle = (color: string) => ({
@@ -120,7 +169,19 @@ const Work = () => {
           </Card>
         )}
       </CardWrap>
-      <Modal isOpen={isModalOpen}></Modal>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={modalStyle}
+      >
+        <CloseModalButton onClick={closeModal} aria-label="閉じる"></CloseModalButton>
+        {isModalOpen &&
+          <>
+            <p>{currentModalContents.name}</p>
+            {currentModalContents.link && <a href={currentModalContents.link}>Code on Github</a>}
+          </>
+        }
+      </Modal>
     </WorkContentsWrapper>
   )
 }
