@@ -5,7 +5,7 @@ const baseWrap = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 `
 export const ContentsWrapper:React.FC = (props) => {
   const Wrap = styled(baseWrap)``
