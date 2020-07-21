@@ -19,6 +19,7 @@ const CardWrap = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  justify-content: space-between;
   overflow: hidden;
   background: #ffffff;
   border-radius: 5px;
@@ -27,8 +28,11 @@ const Card = styled.div`
   margin: 30px 0 0 30px;
 `
 const CardImage = styled.div`
-  background: #cccccc;
-  height: 200px;
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 `
 const CardDescription = styled.div`
   padding: 0 15px 15px;
@@ -115,6 +119,56 @@ const CloseModalButton = styled.button`
     transform: rotate(45deg);
   }
 `
+const LinkButton = styled.a`
+  display: block;
+  position: relative;
+  background: #ffcD9f;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  width: 80%;
+  max-width: 300px;
+  margin: 30px auto;
+  padding: 15px 30px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(45deg);
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    width: 15px;
+    height: 15px;
+  }
+`
+const SkillList = styled.dl`
+  margin-top: 30px;
+  dd {
+    margin-top: 10px;
+  }
+`
+const TechList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  li {
+    margin: 5px; 0 0 5px;
+  }
+`
+const ModalContentsInner = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  img {
+    max-width: 100%;
+  }
+`
+
 const modalStyle = {
   overlay: {
     backgroundColor: 'rgba(102, 102, 102, 0.4)',
@@ -126,6 +180,7 @@ const modalStyle = {
     right: 'auto',
     bottom: 'auto',
     transform: 'translate(-50%, -50%)',
+    fontSize: '1.4rem',
     width: '80%',
     maxWidth: '800px',
     padding: '50px 20px 20px'
@@ -166,7 +221,7 @@ const Work = () => {
                 )}
               </TagsList>
             </CardDescription>
-            <CardImage></CardImage>
+            <CardImage><img src={work.top_image} alt="" /></CardImage>
           </Card>
         )}
       </CardWrap>
@@ -177,21 +232,26 @@ const Work = () => {
       >
         <CloseModalButton onClick={closeModal} aria-label="閉じる"></CloseModalButton>
         {(isModalOpen && currentModalContents)　&&
-          <>
-            <p>{currentModalContents.description}</p>
-            <dl>
-              <dt>使用言語</dt>
-              <dd>
-                <ul>
-                  {
-                    currentModalContents.tags.map((tag, index) =>
-                    <li key={`tag_${index}`}>{tag.name}</li>
-                  )}
-                </ul>
-              </dd>
-            </dl>
-            {currentModalContents.link && <a href={currentModalContents.link}>Code on Github</a>}
-          </>
+          <ModalContentsInner>
+            <div>
+              <p>{currentModalContents.description}</p>
+              <SkillList>
+                <dt>[使用言語]</dt>
+                <dd>
+                  <TechList>
+                    {
+                      currentModalContents.tags.map((tag, index) =>
+                      <li key={`tag_${index}`}>{tag.name}</li>
+                    )}
+                  </TechList>
+                </dd>
+              </SkillList>
+              {currentModalContents.link && <LinkButton href={currentModalContents.link}>Code on Github</LinkButton>}
+            </div>
+            <div>
+              <img src={currentModalContents.detail_image} alt="" />
+            </div>
+          </ModalContentsInner>
         }
       </Modal>
     </WorkContentsWrapper>
