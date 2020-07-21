@@ -9,15 +9,15 @@
       "tags": [
         {
           "name": "TypeScript",
-          "color": "#dddddd"
+          "color": "#294e80"
         },
         {
           "name": "webpack",
-          "color": "#000000"
+          "color": "#1a6bac"
         },
         {
           "name": "SCSS",
-          "color": "#000000"
+          "color": "#c16d97"
         }
       ],
       "link": "https://github.com/harutete/typing-game"
@@ -31,7 +31,7 @@
       "tags": [
         {
           "name": "Nuxt.js",
-          "color": "#666666"
+          "color": "#00c58e"
         }
       ],
       "link": "https://github.com/harutete/search_knowledge"
@@ -45,11 +45,15 @@
       "tags": [
         {
           "name": "TypeScript",
-          "color": "#666666"
+          "color": "#294e80"
+        },
+        {
+          "name": "webpack",
+          "color": "#1a6bac"
         },
         {
           "name": "SCSS",
-          "color": "#000000"
+          "color": "#c16d97"
         }
       ],
       "link": "https://github.com/harutete/urlboon"
@@ -63,11 +67,15 @@
       "tags": [
         {
           "name": "TypeScript",
-          "color": "#666666"
+          "color": "#294e80"
+        },
+        {
+          "name": "webpack",
+          "color": "#1a6bac"
         },
         {
           "name": "SCSS",
-          "color": "#000000"
+          "color": "#c16d97"
         }
       ],
       "link": "https://github.com/harutete/touch-game"
@@ -81,15 +89,15 @@
       "tags": [
         {
           "name": "Nuxt.js",
-          "color": "#666666"
+          "color": "#00c58e"
         },
         {
           "name": "TypeScript",
-          "color": "#666666"
+          "color": "#294e80"
         },
         {
           "name": "Firebase",
-          "color": "#666666"
+          "color": "#ffa000"
         }
       ],
       "link": null
@@ -103,11 +111,11 @@
       "tags": [
         {
           "name": "React",
-          "color": "#666666"
+          "color": "#61dafb"
         },
         {
           "name": "TypeScript",
-          "color": "#666666"
+          "color": "#294e80"
         }
       ],
       "link": null
@@ -121,15 +129,15 @@
       "tags": [
         {
           "name": "React",
-          "color": "#666666"
+          "color": "#61dafb"
         },
         {
           "name": "TypeScript",
-          "color": "#666666"
+          "color": "#294e80"
         },
         {
           "name": "GatsbyJS",
-          "color": "#666666"
+          "color": "#542c85"
         }
       ],
       "link": null
