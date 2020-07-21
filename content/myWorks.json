@@ -4,8 +4,8 @@
       "id": 1,
       "name": "タイピングゲーム",
       "description": "TypeScriptでタイピングゲームを作成しました。",
-      "top_image": null,
-      "detail_image": null,
+      "top_image": "/img/works/img_work_05.png",
+      "detail_image": "/img/works/img_work_05.png",
       "tags": [
         {
           "name": "TypeScript",
@@ -26,8 +26,8 @@
       "id": 2,
       "name": "Qiitaのナレッジ検索",
       "description": "QiitaのAPIを利用し、キーワード検索でナレッジを取得できるWebアプリを作りました。",
-      "top_image": null,
-      "detail_image": null,
+      "top_image": "/img/works/img_work_05.png",
+      "detail_image": "/img/works/img_work_05.png",
       "tags": [
         {
           "name": "Nuxt.js",
@@ -40,8 +40,8 @@
       "id": 3,
       "name": "URL一括遷移機能",
       "description": "URLを入力すると別タブで入力したURLに遷移できる機能を作成しました。\n元々制作会社で働いていた際に更新内容の確認時に毎回URLをタブで開くのが面倒だなと感じたのでTypeScriptで作成してみました。\nGoogleChromeの拡張機能であるScriptAutoRunnerなどを利用すると指定したドメイン下でのみ機能するようになると思います。",
-      "top_image": null,
-      "detail_image": null,
+      "top_image": "/img/works/img_work_05.png",
+      "detail_image": "/img/works/img_work_05.png",
       "tags": [
         {
           "name": "TypeScript",
@@ -62,8 +62,8 @@
       "id": 4,
       "name": "タッチゲーム",
       "description": "お客さんのリクエストに合わせて具材を選択し、ラーメンを完成させるゲーム",
-      "top_image": null,
-      "detail_image": null,
+      "top_image": "/img/works/img_work_05.png",
+      "detail_image": "/img/works/img_work_05.png",
       "tags": [
         {
           "name": "TypeScript",
@@ -106,8 +106,8 @@
       "id": 6,
       "name": "praise-cat",
       "description": "今日1日の頑張ったことを入力すると猫が褒めてくれるwebアプリ",
-      "top_image": null,
-      "detail_image": null,
+      "top_image": "/img/works/img_work_05.png",
+      "detail_image": "/img/works/img_work_05.png",
       "tags": [
         {
           "name": "React",
@@ -124,8 +124,8 @@
       "id": 7,
       "name": "ポートフォリオ",
       "description": "当サイトです",
-      "top_image": null,
-      "detail_image": null,
+      "top_image": "/img/works/img_work_05.png",
+      "detail_image": "/img/works/img_work_05.png",
       "tags": [
         {
           "name": "React",
