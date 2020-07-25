@@ -1,8 +1,11 @@
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import reset from 'styled-reset'
+import { theme } from './theme'
 import "typeface-caveat"
 
 const GlobalStyle = createGlobalStyle`
+${reset}
 :root {
   font-size: 62.5%;
 }
@@ -15,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
   background: #FFFAF3;
-  color: #333333;
+  color: ${({theme}) => theme.colors.textColor};
   font-family: "Helvetica Neue",
     Arial,
     "Hiragino Kaku Gothic ProN",
@@ -25,9 +28,12 @@ body {
 }
 `
 
-const Layout = () => (
+export const Layout = ({element}) => (
   <React.Fragment>
-    <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      {element}
+    </ThemeProvider>
   </React.Fragment>
 )
 
