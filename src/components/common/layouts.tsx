@@ -17,7 +17,7 @@ ${reset}
   padding: 0;
 }
 body {
-  background: #FFFAF3;
+  background: ${({theme}) => theme.colors.beige};
   color: ${({theme}) => theme.colors.textColor};
   font-family: "Helvetica Neue",
     Arial,

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { rgba } from 'polished'
 import Modal from 'react-modal';
 import myWorks from '../../../content/myWorks.json'
 
@@ -9,7 +10,7 @@ import PrimaryHeading from '../common/PrimaryHeading'
 Modal.setAppElement('#___gatsby')
 
 const WorkContentsWrapper = styled(detailContentsWrapper)`
-  background: rgba(255, 205, 159, 0.8);
+  background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
 `
 const CardWrap = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Card = styled.div`
   flex-direction: column-reverse;
   justify-content: space-between;
   overflow: hidden;
-  background: #ffffff;
+  background: ${({theme}) => theme.colors.white};
   border-radius: 5px;
   color: #333333;
   width: 280px;
@@ -60,7 +61,7 @@ const ModalIcon = styled.button`
   vertical-align: text-bottom;
   position: relative;
   transition: opacity 0.2s;
-  background: #ffffff;
+  background: ${({theme}) => theme.colors.white};
   border: 2px solid #666666;
   border-radius: 50%;
   width: 18px;
@@ -79,7 +80,7 @@ const ModalIcon = styled.button`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #666666;
+    background: ${({theme}) => theme.colors.darkGray};
     border-radius: 2px;
   }
   &::before {
@@ -107,7 +108,7 @@ const CloseModalButton = styled.button`
     top: 0;
     right: 50%;
     transform: translateY(-50%);
-    background: #333333;
+    background: ${({theme}) => theme.colors.textColor};
     border-radius: 3px;
     width: 2px;
     height: 30px;
@@ -122,7 +123,7 @@ const CloseModalButton = styled.button`
 const LinkButton = styled.a`
   display: block;
   position: relative;
-  background: #ffcD9f;
+  background: ${({theme}) => theme.colors.orange};
   border-radius: 4px;
   color: #ffffff;
   font-size: 1.8rem;

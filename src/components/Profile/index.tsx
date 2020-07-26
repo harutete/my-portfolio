@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { rgba } from 'polished'
 import mySkill from '../../../content/mySkill.json'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 
 const ProfileContentsWrapper = styled(detailContentsWrapper)`
-  background: rgba(201, 159, 255, 0.8);
+  background: ${({theme}) => rgba(theme.colors.purple, 0.8)};
 `
 const Heading02 = styled.h2`
   font-size: 1.8rem;

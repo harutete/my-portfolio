@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { rgba } from 'polished'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 
 const ContactContentsWrapper = styled(detailContentsWrapper)`
-  background: rgba(159, 221, 255, 0.8);
+  background: ${({theme}) => rgba(theme.colors.blue, 0.8)};
 `
 const AddressText = styled.p`
   font-size: 1.8rem;
