@@ -28,7 +28,7 @@ body {
 }
 `
 
-export const Layout = ({element}) => (
+export const Layout = ({element}: any) => (
   <React.Fragment>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
