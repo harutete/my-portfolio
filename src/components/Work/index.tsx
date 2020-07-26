@@ -190,7 +190,7 @@ const modalStyle = {
 const Work = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
   const [ currentModalContents, setCurrentModalContents ] = useState(null)
-  const openModal = (event) => {
+  const openModal = (event: any) => {
     const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
     const currentContent = myWorks.works.find(work => work.id === currentContentId)
     setCurrentModalContents(currentContent)
@@ -232,7 +232,7 @@ const Work = () => {
         style={modalStyle}
       >
         <CloseModalButton onClick={closeModal} aria-label="閉じる"></CloseModalButton>
-        {(isModalOpen && currentModalContents)　&&
+        {(isModalOpen && currentModalContents !== null)　&&
           <ModalContentsInner>
             <div>
               <p>{currentModalContents.description}</p>
