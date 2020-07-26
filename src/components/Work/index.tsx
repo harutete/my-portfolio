@@ -24,7 +24,7 @@ const Card = styled.div`
   overflow: hidden;
   background: ${({theme}) => theme.colors.white};
   border-radius: 5px;
-  color: #333333;
+  color: ${({theme}) => theme.colors.textColor};
   width: 280px;
   margin: 30px 0 0 30px;
 `
@@ -62,7 +62,7 @@ const ModalIcon = styled.button`
   position: relative;
   transition: opacity 0.2s;
   background: ${({theme}) => theme.colors.white};
-  border: 2px solid #666666;
+  border: 2px solid ${({theme}) => theme.colors.darkGray};
   border-radius: 50%;
   width: 18px;
   height: 18px;
@@ -125,7 +125,7 @@ const LinkButton = styled.a`
   position: relative;
   background: ${({theme}) => theme.colors.orange};
   border-radius: 4px;
-  color: #ffffff;
+  color: ${({theme}) => theme.colors.white};
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
@@ -140,8 +140,8 @@ const LinkButton = styled.a`
     top: 50%;
     right: 15px;
     transform: translateY(-50%) rotate(45deg);
-    border-top: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
+    border-top: 2px solid ${({theme}) => theme.colors.white};
+    border-right: 2px solid ${({theme}) => theme.colors.white};
     width: 15px;
     height: 15px;
   }

@@ -22,7 +22,7 @@ const Navigation: React.FC = () => {
       position: absolute;
       left: 100px;
 
-      color: #ffffff;
+      color: ${({theme}) => theme.colors.white};
       font-family: 'Caveat', cursive;
       font-size: 5rem;
       text-decoration: none;

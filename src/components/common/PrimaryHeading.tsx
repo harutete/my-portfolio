@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const PrimaryHeading = ({children}) => {
   const Heading = styled.h1`
-    color: #ffffff;
+    color: ${({theme}) => theme.colors.white};
     font-size: 10rem;
     font-family: 'Caveat', cursive;
   `

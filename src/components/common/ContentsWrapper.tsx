@@ -19,7 +19,7 @@ export const detailContentsWrapper:React.FC = (props) => {
   const Wrap = styled(baseWrap)`
     flex-direction: column;
     justify-content: center;
-    color: #ffffff;
+    color: ${({theme}) => theme.colors.white};
     padding: 50px;
   `
 
