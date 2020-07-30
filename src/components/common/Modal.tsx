@@ -51,11 +51,6 @@ const CloseModalButton = styled.button`
   }
 `
 
-const ModalContentsInner = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-`
 
 const ModalWindow = (props: any) => (
   <Modal
@@ -64,9 +59,7 @@ const ModalWindow = (props: any) => (
     style={modalStyle}
   >
     <CloseModalButton onClick={props.onClick} aria-label="閉じる"></CloseModalButton>
-    <ModalContentsInner>
-      {props.children}
-    </ModalContentsInner>
+    {props.children}
   </Modal>
 )
 

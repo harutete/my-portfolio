@@ -144,7 +144,11 @@ const Work = () => {
   const openModal = (event: any) => {
     const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
     const currentContent = myWorks.works.find(work => work.id === currentContentId)
-    setCurrentModalContents(currentContent)
+    if (currentContent) {
+      setCurrentModalContents(currentContent)
+    } else {
+      setCurrentModalContents(null)
+    }
     setIsModalOpen(true)
   }
   const closeModal = () => {
@@ -182,10 +186,10 @@ const Work = () => {
         onRequestClose={closeModal}
         onClick={closeModal}
       >
-        {(isModalOpen && currentModalContents !== null)　&&
+        {(isModalOpen && currentModalContents !== null) &&
           <ModalContentsInner>
             <div>
-              <p>{currentModalContents.description}</p>
+              <p>{currentModalContents.description!}</p>
               <SkillList>
                 <dt>[使用言語]</dt>
                 <dd>
