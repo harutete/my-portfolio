@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import Modal from 'react-modal';
 import myWorks from '../../../content/myWorks.json'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
-
-Modal.setAppElement('#___gatsby')
+import ModalWindow from '../../components/common/Modal';
 
 const WorkContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
@@ -92,34 +90,6 @@ const ModalIcon = styled.button`
     height: 2px;
   }
 `
-const CloseModalButton = styled.button`
-  cursor: pointer;
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  border: none;
-  background: none;
-  width: 30px;
-  height: 30px;
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 50%;
-    transform: translateY(-50%);
-    background: ${({theme}) => theme.colors.textColor};
-    border-radius: 3px;
-    width: 2px;
-    height: 30px;
-  }
-  &::before {
-    transform: rotate(-45deg);
-  }
-  &::after {
-    transform: rotate(45deg);
-  }
-`
 const LinkButton = styled.a`
   display: block;
   position: relative;
@@ -159,14 +129,6 @@ const TechList = styled.ul`
   margin-left: -5px;
   li {
     margin: 5px; 0 0 5px;
-  }
-`
-const ModalContentsInner = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  img {
-    max-width: 100%;
   }
 `
 
@@ -226,14 +188,14 @@ const Work = () => {
           </Card>
         )}
       </CardWrap>
-      <Modal
+      <ModalWindow
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         style={modalStyle}
+        onClick={closeModal}
       >
-        <CloseModalButton onClick={closeModal} aria-label="閉じる"></CloseModalButton>
         {(isModalOpen && currentModalContents !== null)　&&
-          <ModalContentsInner>
+          <>
             <div>
               <p>{currentModalContents.description}</p>
               <SkillList>
@@ -252,9 +214,9 @@ const Work = () => {
             <div>
               <img src={currentModalContents.detail_image} alt="" />
             </div>
-          </ModalContentsInner>
+          </>
         }
-      </Modal>
+      </ModalWindow>
     </WorkContentsWrapper>
   )
 }
