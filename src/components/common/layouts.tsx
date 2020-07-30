@@ -26,6 +26,9 @@ body {
     Meiryo,
     sans-serif;
 }
+img {
+  max-width: 100%;
+}
 `
 
 export const Layout = ({element}: any) => (

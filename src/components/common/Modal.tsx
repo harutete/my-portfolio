@@ -55,9 +55,6 @@ const ModalContentsInner = styled.div`
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  img {
-    max-width: 100%;
-  }
 `
 
 const ModalWindow = (props: any) => (
