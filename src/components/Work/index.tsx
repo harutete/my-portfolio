@@ -144,11 +144,7 @@ const Work = () => {
   const openModal = (event: any) => {
     const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
     const currentContent = myWorks.works.find(work => work.id === currentContentId)
-    if (currentContent) {
-      setCurrentModalContents(currentContent)
-    } else {
-      setCurrentModalContents(null)
-    }
+    setCurrentModalContents(currentContent)
     setIsModalOpen(true)
   }
   const closeModal = () => {
