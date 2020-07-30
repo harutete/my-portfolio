@@ -132,23 +132,12 @@ const TechList = styled.ul`
   }
 `
 
-const modalStyle = {
-  overlay: {
-    backgroundColor: 'rgba(102, 102, 102, 0.4)',
-  },
-  content: {
-    border: 'none',
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    fontSize: '1.4rem',
-    width: '80%',
-    maxWidth: '800px',
-    padding: '50px 20px 20px'
-  }
-}
+const ModalContentsInner = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+`
+
 const Work = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
   const [ currentModalContents, setCurrentModalContents ] = useState(null)
@@ -191,11 +180,10 @@ const Work = () => {
       <ModalWindow
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={modalStyle}
         onClick={closeModal}
       >
         {(isModalOpen && currentModalContents !== null)　&&
-          <>
+          <ModalContentsInner>
             <div>
               <p>{currentModalContents.description}</p>
               <SkillList>
@@ -214,7 +202,7 @@ const Work = () => {
             <div>
               <img src={currentModalContents.detail_image} alt="" />
             </div>
-          </>
+          </ModalContentsInner>
         }
       </ModalWindow>
     </WorkContentsWrapper>
