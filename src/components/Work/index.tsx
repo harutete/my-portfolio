@@ -138,13 +138,17 @@ const ModalContentsInner = styled.div`
   justify-content: space-between;
 `
 
+type StateType = {
+  [key: string]: any
+}
+
 const Work = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
-  const [ currentModalContents, setCurrentModalContents ] = useState(null)
+  const [ currentModalContents, setCurrentModalContents ] = useState<StateType | null>(null)
   const openModal = (event: any) => {
     const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
     const currentContent = myWorks.works.find(work => work.id === currentContentId)
-    setCurrentModalContents(currentContent)
+    setCurrentModalContents(currentContent ? currentContent : null)
     setIsModalOpen(true)
   }
   const closeModal = () => {
@@ -185,13 +189,13 @@ const Work = () => {
         {(isModalOpen && currentModalContents !== null) &&
           <ModalContentsInner>
             <div>
-              <p>{currentModalContents.description!}</p>
+              <p>{currentModalContents.description}</p>
               <SkillList>
                 <dt>[使用言語]</dt>
                 <dd>
                   <TechList>
                     {
-                      currentModalContents.tags.map((tag, index) =>
+                      currentModalContents.tags.map((tag: StateType, index: number) =>
                       <li key={`tag_${index}`}>{tag.name}</li>
                     )}
                   </TechList>
