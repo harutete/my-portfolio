@@ -51,7 +51,6 @@ const CloseModalButton = styled.button`
   }
 `
 
-
 const ModalWindow = (props: any) => (
   <Modal
     isOpen={props.isOpen}
