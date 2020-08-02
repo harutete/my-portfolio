@@ -8,6 +8,9 @@ import PrimaryHeading from '../common/PrimaryHeading'
 
 const ProfileContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => rgba(theme.colors.purple, 0.8)};
+  &::after {
+    background: ${({theme}) => rgba(theme.colors.purple, 0.8)};
+  }
 `
 const Heading02 = styled.h2`
   font-size: 1.8rem;

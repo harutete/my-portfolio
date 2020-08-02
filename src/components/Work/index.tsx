@@ -10,6 +10,9 @@ import ModalWindow from '../../components/common/Modal';
 
 const WorkContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
+  &::after {
+    background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
+  }
 `
 const CardWrap = styled.div`
   display: flex;

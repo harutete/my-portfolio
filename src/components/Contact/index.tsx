@@ -7,6 +7,9 @@ import PrimaryHeading from '../common/PrimaryHeading'
 
 const ContactContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => rgba(theme.colors.blue, 0.8)};
+  &::after {
+    background: ${({theme}) => rgba(theme.colors.blue, 0.8)};
+  }
 `
 const AddressText = styled.p`
   font-size: 1.8rem;
