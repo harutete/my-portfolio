@@ -1,24 +1,24 @@
 {
   "contents": [
-      {
-        "name": "Design",
-        "tools": [
-          "Adobe Photoshop",
-          "Adobe Illustrator"
-        ]
-      },
-      {
-        "name": "Markup&Programming",
-        "tools": [
-          "HTML",
-          "CSS(SCSS)",
-          "JavaScript",
-          "jQuery",
-          "TypeScript",
-          "Vue.js",
-          "Nuxt.js",
-          "React"
-        ]
-      }
-    ]
+    {
+      "name": "Design",
+      "tools": [
+        "Adobe Photoshop",
+        "Adobe Illustrator"
+      ]
+    },
+    {
+      "name": "Markup&Programming",
+      "tools": [
+        "HTML",
+        "CSS(SCSS)",
+        "JavaScript",
+        "jQuery",
+        "TypeScript",
+        "Vue.js",
+        "Nuxt.js",
+        "React"
+      ]
+    }
+  ]
 }

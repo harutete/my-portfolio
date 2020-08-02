@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 import myWorks from '../../../content/myWorks.json'
+import { Works } from '../../../types/'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
@@ -138,13 +139,9 @@ const ModalContentsInner = styled.div`
   justify-content: space-between;
 `
 
-type StateType = {
-  [key: string]: any
-}
-
 const Work = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
-  const [ currentModalContents, setCurrentModalContents ] = useState<StateType | null>(null)
+  const [ currentModalContents, setCurrentModalContents ] = useState<Works | null>(null)
   const openModal = (event: any) => {
     const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
     const currentContent = myWorks.works.find(work => work.id === currentContentId)
