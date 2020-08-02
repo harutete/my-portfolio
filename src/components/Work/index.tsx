@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 import myWorks from '../../../content/myWorks.json'
-import { Works } from '../../../types/'
+import { Works, Tags } from '../../../types/'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
@@ -192,7 +192,7 @@ const Work = () => {
                 <dd>
                   <TechList>
                     {
-                      currentModalContents.tags.map((tag: StateType, index: number) =>
+                      currentModalContents.tags.map((tag: Tags, index: number) =>
                       <li key={`tag_${index}`}>{tag.name}</li>
                     )}
                   </TechList>
