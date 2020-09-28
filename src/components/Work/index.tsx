@@ -7,6 +7,7 @@ import { Works, Tags } from '../../../types/'
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import ModalWindow from '../../components/common/Modal';
+import ReturnButton from '../common/ReturnButton'
 
 const WorkContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
@@ -209,6 +210,7 @@ const Work = () => {
           </ModalContentsInner>
         }
       </ModalWindow>
+      <ReturnButton />
     </WorkContentsWrapper>
   )
 }
