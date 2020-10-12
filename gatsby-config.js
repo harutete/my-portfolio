@@ -5,9 +5,19 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `AI TAKEUCHI's Portfolio`,
+  },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
+    `gatsby-transformer-remark`
   ],
 }

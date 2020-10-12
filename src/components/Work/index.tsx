@@ -143,7 +143,7 @@ const ModalContentsInner = styled.div`
   justify-content: space-between;
 `
 
-const Work = () => {
+const Work = (props) => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)
   const [ currentModalContents, setCurrentModalContents ] = useState<Works | null>(null)
   const openModal = (event: any) => {
@@ -164,6 +164,17 @@ const Work = () => {
     <WorkContentsWrapper>
       <PrimaryHeading>Work</PrimaryHeading>
       <CardWrap>
+            {/* {data.allMarkdownRemark.edges.map(({ node }) => ( */}
+                {/* <div key={node.id}> */}
+                 {/* <h3> */}
+                   {/* {node.frontmatter.title}{" "} */}
+                   {/* <span> */}
+                     {/* — {node.frontmatter.date} */}
+                   {/* </span> */}
+                 {/* </h3> */}
+                 {/* <p>{node.excerpt}</p> */}
+               {/* </div> */}
+              {/* ))} */}
         {myWorks.works.map((work, index) =>
           <Card key={`woprk_${index}`}>
             <CardDescription>
