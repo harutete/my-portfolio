@@ -38,7 +38,10 @@ export const query = graphql`
           id
           frontmatter {
             title
-            tags
+            tags {
+              name
+              color
+            }
           }
           excerpt
         }
