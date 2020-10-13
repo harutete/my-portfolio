@@ -3,6 +3,10 @@ import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Layout from '../components/common/layouts'
 
+type TagType = {
+  name: string,
+  color: string
+}
 const TagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -29,14 +33,12 @@ const WorksTemplate = ({ data }) => {
       <div>
         <h1>{post.frontmatter.title}</h1>
         <TagsList>
-          {post.frontmatter.tags.map((aaa, index) =>{
-            console.log({aaa})
-            return (
-              <li key={`${index}`}>
-                {aaa.name}
+          {post.frontmatter.tags.map((tag: TagType, index: number) =>
+            (
+              <li key={`${index}`} style={tagStyle(tag.color)}>
+                {tag.name}
               </li>
             )
-          }
           )}
         </TagsList>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
