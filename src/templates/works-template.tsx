@@ -20,9 +20,35 @@ const TagsList = styled.ul`
     padding: 2px 5px;
   }
 `
+const LinkButton = styled.a`
+  display: block;
+  position: relative;
+  background: ${({theme}) => theme.colors.orange};
+  border-radius: 4px;
+  color: ${({theme}) => theme.colors.white};
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  width: 80%;
+  max-width: 300px;
+  margin: 30px auto;
+  padding: 15px 30px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(45deg);
+    border-top: 2px solid ${({theme}) => theme.colors.white};
+    border-right: 2px solid ${({theme}) => theme.colors.white};
+    width: 15px;
+    height: 15px;
+  }
+`
 
 const WorksTemplate = ({ data }) => {
-  const post = data.markdownRemark
+  const workData = data.markdownRemark
   const tagStyle = (color: string) => ({
     borderColor: color,
     color: color
@@ -31,9 +57,9 @@ const WorksTemplate = ({ data }) => {
     <>
       <Layout />
       <div>
-        <h1>{post.frontmatter.title}</h1>
+        <h1>{workData.frontmatter.title}</h1>
         <TagsList>
-          {post.frontmatter.tags.map((tag: TagType, index: number) =>
+          {workData.frontmatter.tags.map((tag: TagType, index: number) =>
             (
               <li key={`${index}`} style={tagStyle(tag.color)}>
                 {tag.name}
@@ -41,7 +67,8 @@ const WorksTemplate = ({ data }) => {
             )
           )}
         </TagsList>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: workData.html }} />
+        {workData.frontmatter.link && <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>}
       </div>
     </>
   )
@@ -56,6 +83,7 @@ export const query = graphql`
           name
           color
         }
+        link
       }
     }
   }

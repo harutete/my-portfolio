@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import myWorks from '../../../content/myWorks.json'
 import { Works, Tags } from '../../../types/'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
-import ModalWindow from '../../components/common/Modal';
 import ReturnButton from '../common/ReturnButton'
 
 const WorkContentsWrapper = styled(detailContentsWrapper)`
@@ -58,75 +57,6 @@ const TagsList = styled.ul`
     padding: 2px 5px;
   }
 `
-const ModalIcon = styled.button`
-  cursor: pointer;
-  display: inline-block;
-  vertical-align: text-bottom;
-  position: relative;
-  transition: opacity 0.2s;
-  background: ${({theme}) => theme.colors.white};
-  border: 2px solid ${({theme}) => theme.colors.darkGray};
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  margin-left: 5px;
-  &:hover {
-    opacity: 0.6;
-  }
-  &:focus {
-    outline: none;
-  }
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: ${({theme}) => theme.colors.darkGray};
-    border-radius: 2px;
-  }
-  &::before {
-    width: 2px;
-    height: 10px;
-  }
-  &::after {
-    width: 10px;
-    height: 2px;
-  }
-`
-const LinkButton = styled.a`
-  display: block;
-  position: relative;
-  background: ${({theme}) => theme.colors.orange};
-  border-radius: 4px;
-  color: ${({theme}) => theme.colors.white};
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  width: 80%;
-  max-width: 300px;
-  margin: 30px auto;
-  padding: 15px 30px;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%) rotate(45deg);
-    border-top: 2px solid ${({theme}) => theme.colors.white};
-    border-right: 2px solid ${({theme}) => theme.colors.white};
-    width: 15px;
-    height: 15px;
-  }
-`
-const SkillList = styled.dl`
-  margin-top: 30px;
-  dd {
-    margin-top: 10px;
-  }
-`
 const TechList = styled.ul`
   list-style: none;
   display: flex;
@@ -137,25 +67,7 @@ const TechList = styled.ul`
   }
 `
 
-const ModalContentsInner = styled.div`
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-`
-
-const Work = (props) => {
-  const [ isModalOpen, setIsModalOpen ] = useState(false)
-  const [ currentModalContents, setCurrentModalContents ] = useState<Works | null>(null)
-  const openModal = (event: any) => {
-    const currentContentId = parseInt(event.currentTarget.getAttribute('data-work-id'), 10)
-    const currentContent = myWorks.works.find(work => work.id === currentContentId)
-    setCurrentModalContents(currentContent ? currentContent : null)
-    setIsModalOpen(true)
-  }
-  const closeModal = () => {
-    setCurrentModalContents(null)
-    setIsModalOpen(false)
-  }
+const Work = ({ worksData }) => {
   const tagStyle = (color: string) => ({
     borderColor: color,
     color: color
@@ -164,63 +76,26 @@ const Work = (props) => {
     <WorkContentsWrapper>
       <PrimaryHeading>Work</PrimaryHeading>
       <CardWrap>
-            {/* {data.allMarkdownRemark.edges.map(({ node }) => ( */}
-                {/* <div key={node.id}> */}
-                 {/* <h3> */}
-                   {/* {node.frontmatter.title}{" "} */}
-                   {/* <span> */}
-                     {/* — {node.frontmatter.date} */}
-                   {/* </span> */}
-                 {/* </h3> */}
-                 {/* <p>{node.excerpt}</p> */}
-               {/* </div> */}
-              {/* ))} */}
-        {myWorks.works.map((work, index) =>
-          <Card key={`woprk_${index}`}>
-            <CardDescription>
-              <CardTitle>
-                {work.name}<ModalIcon data-work-id={work.id} onClick={openModal} />
-              </CardTitle>
-              <TagsList>
-                {work.tags.map((tag, index) =>
-                  <li key={`tag_${index}`} style={tagStyle(tag.color)}>
-                    {tag.name}
-                  </li>
-                )}
-              </TagsList>
-            </CardDescription>
-            <CardImage><img src={work.top_image} alt="" /></CardImage>
+        {worksData.allMarkdownRemark.edges.map(({ node }) => (
+          <Card key={`woprk_${node.id}`}>
+            <Link to={node.fields.slug}>
+              <CardDescription>
+                <CardTitle>
+                  {node.title}
+                </CardTitle>
+                <TagsList>
+                  {node.frontmatter.tags.map((tag, index) =>
+                    <li key={`tag_${index}`} style={tagStyle(tag.color)}>
+                      {tag.name}
+                    </li>
+                  )}
+                </TagsList>
+              </CardDescription>
+              {/* <CardImage><img src={work.top_image} alt="" /></CardImage> */}
+              </Link>
           </Card>
-        )}
+        ))}
       </CardWrap>
-      <ModalWindow
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        onClick={closeModal}
-      >
-        {(isModalOpen && currentModalContents !== null) &&
-          <ModalContentsInner>
-            <div>
-              <p>{currentModalContents.description}</p>
-              <SkillList>
-                <dt>[使用言語]</dt>
-                <dd>
-                  <TechList>
-                    {
-                      currentModalContents.tags.map((tag: Tags, index: number) =>
-                      <li key={`tag_${index}`}>{tag.name}</li>
-                    )}
-                  </TechList>
-                </dd>
-              </SkillList>
-              {currentModalContents.link && <LinkButton href={currentModalContents.link}>Code on Github</LinkButton>}
-            </div>
-            <div>
-              <img src={currentModalContents.detail_image} alt="" />
-            </div>
-          </ModalContentsInner>
-        }
-      </ModalWindow>
       <ReturnButton />
     </WorkContentsWrapper>
   )
