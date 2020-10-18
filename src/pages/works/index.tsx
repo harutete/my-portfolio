@@ -24,6 +24,7 @@ export const query = graphql`
               name
               color
             }
+            list_image
           }
           fields {
             slug

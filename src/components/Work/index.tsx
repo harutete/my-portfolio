@@ -78,21 +78,19 @@ const Work = ({ worksData }) => {
       <CardWrap>
         {worksData.allMarkdownRemark.edges.map(({ node }) => (
           <Card key={`woprk_${node.id}`}>
-            <Link to={node.fields.slug}>
-              <CardDescription>
-                <CardTitle>
-                  {node.title}
-                </CardTitle>
-                <TagsList>
-                  {node.frontmatter.tags.map((tag, index) =>
-                    <li key={`tag_${index}`} style={tagStyle(tag.color)}>
-                      {tag.name}
-                    </li>
-                  )}
-                </TagsList>
-              </CardDescription>
-              {/* <CardImage><img src={work.top_image} alt="" /></CardImage> */}
-              </Link>
+            <CardDescription>
+              <CardTitle>
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </CardTitle>
+              <TagsList>
+                {node.frontmatter.tags.map((tag, index) =>
+                  <li key={`tag_${index}`} style={tagStyle(tag.color)}>
+                    {tag.name}
+                  </li>
+                )}
+              </TagsList>
+            </CardDescription>
+            <CardImage><img src={node.list_image} alt="" /></CardImage>
           </Card>
         ))}
       </CardWrap>
