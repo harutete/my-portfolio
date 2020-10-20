@@ -49,6 +49,7 @@ const LinkButton = styled.a`
 
 const WorksTemplate = ({ data }) => {
   const workData = data.markdownRemark
+  console.log({workData})
   const tagStyle = (color: string) => ({
     borderColor: color,
     color: color
@@ -82,6 +83,13 @@ export const query = graphql`
         tags {
           name
           color
+        }
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
         link
       }

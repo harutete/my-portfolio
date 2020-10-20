@@ -20,11 +20,17 @@ export const query = graphql`
           id
           frontmatter {
             title
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             tags {
               name
               color
             }
-            list_image
           }
           fields {
             slug

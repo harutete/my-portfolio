@@ -1,23 +1,24 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
   siteMetadata: {
     title: `AI TAKEUCHI's Portfolio`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-plugin-styled-components`,
-    `gatsby-plugin-typescript`,
-    `gatsby-transformer-remark`
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+      },
+    }
   ],
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { rgba } from 'polished'
+import Img from "gatsby-image"
 import { Works, Tags } from '../../../types/'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
@@ -90,7 +91,7 @@ const Work = ({ worksData }) => {
                 )}
               </TagsList>
             </CardDescription>
-            <CardImage><img src={node.list_image} alt="" /></CardImage>
+            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
           </Card>
         ))}
       </CardWrap>
