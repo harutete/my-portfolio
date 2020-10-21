@@ -8,11 +8,33 @@ import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
 import ReturnButton from '../components/common/ReturnButton'
 
+const WorkDetailWrap = styled.div`
+  background: ${({theme}) => theme.colors.white};
+  border-radius: 4px;
+  color: ${({theme}) => theme.colors.textColor};
+  margin-top: 30px;
+  padding: 15px;
+  h2 {
+    font-size: 3rem;
+  }
+`
+const WorkDescriptionWrap = styled.div`
+  margin-top: 20px;
+`
+const Description = styled.div`
+  margin-top: 20px;
+  p {
+    font-size: 1.6rem;
+  }
+`
+const WorkImageWrap = styled.div`
+  margin-top: 20px;
+`
 const LinkButton = styled.a`
   display: block;
   position: relative;
   background: ${({theme}) => theme.colors.orange};
-  border-radius: 4px;
+  border-radius: 5px;
   color: ${({theme}) => theme.colors.white};
   font-size: 1.8rem;
   font-weight: bold;
@@ -28,10 +50,14 @@ const LinkButton = styled.a`
     top: 50%;
     right: 15px;
     transform: translateY(-50%) rotate(45deg);
+    transition: right .2s ease 0s;
     border-top: 2px solid ${({theme}) => theme.colors.white};
     border-right: 2px solid ${({theme}) => theme.colors.white};
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
+  }
+  &:hover::before {
+    right: 10px;
   }
 `
 
@@ -41,13 +67,19 @@ const WorksTemplate = ({ data }) => {
     <>
       <WorkContentsWrapper>
         <PrimaryHeading>Works</PrimaryHeading>
-        <h2>{workData.frontmatter.title}</h2>
-        <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
-        <TagList data={workData.frontmatter.tags} />
-        <div dangerouslySetInnerHTML={{ __html: workData.html }} />
-        {workData.frontmatter.link &&
-          <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
-        }
+        <WorkDetailWrap>
+          <h2>{workData.frontmatter.title}</h2>
+          <WorkImageWrap>
+            <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
+          </WorkImageWrap>
+          <WorkDescriptionWrap>
+            <TagList data={workData.frontmatter.tags} />
+            <Description dangerouslySetInnerHTML={{ __html: workData.html }} />
+            {workData.frontmatter.link &&
+              <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
+            }
+          </WorkDescriptionWrap>
+        </WorkDetailWrap>
         <ReturnButton />
       </WorkContentsWrapper>
     </>
