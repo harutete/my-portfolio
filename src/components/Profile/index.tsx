@@ -5,6 +5,7 @@ import mySkill from '../../../content/mySkill.json'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
+import ReturnButton from '../common/ReturnButton'
 
 const ProfileContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => rgba(theme.colors.purple, 0.8)};
@@ -77,6 +78,7 @@ const Profile = () => {
           </a>
         </li>
       </SnsLinkList>
+      <ReturnButton />
     </ProfileContentsWrapper>
   )
 }
