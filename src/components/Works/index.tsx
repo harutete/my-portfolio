@@ -35,20 +35,6 @@ const CardTitle = styled.h2`
     text-decoration: none;
   }
 `
-const TagsList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin-left: -5px;
-  li {
-    border-radius: 2px;
-    border-style: solid;
-    border-width: 1px;
-    margin: 10px 0 0 5px;
-    padding: 2px 5px;
-  }
-`
-
 const Work = ({ worksData }) => (
   <WorkContentsWrapper>
     <PrimaryHeading>Works</PrimaryHeading>
