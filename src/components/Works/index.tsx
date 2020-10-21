@@ -1,20 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { rgba } from 'polished'
 import Img from 'gatsby-image'
 
-import { detailContentsWrapper } from '../common/ContentsWrapper'
+import WorkContentsWrapper from './ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import TagList from './TagList'
 import ReturnButton from '../common/ReturnButton'
 
-const WorkContentsWrapper = styled(detailContentsWrapper)`
-  background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
-  &::after {
-    background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
-  }
-`
 const CardWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +51,7 @@ const TagsList = styled.ul`
 
 const Work = ({ worksData }) => (
   <WorkContentsWrapper>
-    <PrimaryHeading>Work</PrimaryHeading>
+    <PrimaryHeading>Works</PrimaryHeading>
     <CardWrap>
       {worksData.allMarkdownRemark.edges.map(({ node }) => (
         <Card key={`woprk_${node.id}`}>

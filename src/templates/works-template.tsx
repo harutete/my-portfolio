@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Layout from '../components/common/layouts'
 import Img from 'gatsby-image'
 
+import WorkContentsWrapper from '../components/Works/ContentsWrapper'
+import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
 
 const LinkButton = styled.a`
@@ -37,14 +39,14 @@ const WorksTemplate = ({ data }) => {
   const workData = data.markdownRemark
   return (
     <>
-      <Layout />
-      <div>
-        <h1>{workData.frontmatter.title}</h1>
+      <WorkContentsWrapper>
+        <PrimaryHeading>Works</PrimaryHeading>
+        <h2>{workData.frontmatter.title}</h2>
         <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
         <TagList data={workData.frontmatter.tags} />
         <div dangerouslySetInnerHTML={{ __html: workData.html }} />
         {workData.frontmatter.link && <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>}
-      </div>
+      </WorkContentsWrapper>
     </>
   )
 }
