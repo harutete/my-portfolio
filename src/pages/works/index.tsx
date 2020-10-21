@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import Layout from '../../components/common/layouts'
-import WorkComponent from '../../components/Work'
+import WorkComponent from '../../components/Works'
 
 const Home = ({ data }) =>
 (

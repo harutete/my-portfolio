@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
                 fillOpacity="0.8"
               />
             </SvgWrap>
-            <Link to="/work">Work</Link>
+            <Link to="/works">Work</Link>
           </div>
         </Work>
         <Profile>

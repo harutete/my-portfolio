@@ -31,13 +31,6 @@ const Card = styled.div`
   width: 280px;
   margin: 30px 0 0 30px;
 `
-const CardImage = styled.div`
-  img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-`
 const CardDescription = styled.div`
   padding: 0 15px 15px;
 `
@@ -56,15 +49,6 @@ const TagsList = styled.ul`
     border-width: 1px;
     margin: 10px 0 0 5px;
     padding: 2px 5px;
-  }
-`
-const TechList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -5px;
-  li {
-    margin: 5px; 0 0 5px;
   }
 `
 
