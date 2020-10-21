@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { rgba } from 'polished'
 import Img from 'gatsby-image'
-import { Works, Tags } from '../../../types/'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
+import TagList from './TagList'
 import ReturnButton from '../common/ReturnButton'
 
 const WorkContentsWrapper = styled(detailContentsWrapper)`
@@ -37,6 +37,10 @@ const CardDescription = styled.div`
 const CardTitle = styled.h2`
   font-size: 1.8rem;
   margin-top: 15px;
+  a {
+    color: ${({theme}) => theme.colors.textColor};
+    text-decoration: none;
+  }
 `
 const TagsList = styled.ul`
   display: flex;
@@ -52,36 +56,24 @@ const TagsList = styled.ul`
   }
 `
 
-const Work = ({ worksData }) => {
-  const tagStyle = (color: string) => ({
-    borderColor: color,
-    color: color
-  })
-  return (
-    <WorkContentsWrapper>
-      <PrimaryHeading>Work</PrimaryHeading>
-      <CardWrap>
-        {worksData.allMarkdownRemark.edges.map(({ node }) => (
-          <Card key={`woprk_${node.id}`}>
-            <CardDescription>
-              <CardTitle>
-                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-              </CardTitle>
-              <TagsList>
-                {node.frontmatter.tags.map((tag, index) =>
-                  <li key={`tag_${index}`} style={tagStyle(tag.color)}>
-                    {tag.name}
-                  </li>
-                )}
-              </TagsList>
-            </CardDescription>
-            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
-          </Card>
-        ))}
-      </CardWrap>
-      <ReturnButton />
-    </WorkContentsWrapper>
-  )
-}
+const Work = ({ worksData }) => (
+  <WorkContentsWrapper>
+    <PrimaryHeading>Work</PrimaryHeading>
+    <CardWrap>
+      {worksData.allMarkdownRemark.edges.map(({ node }) => (
+        <Card key={`woprk_${node.id}`}>
+          <CardDescription>
+            <CardTitle>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            </CardTitle>
+            <TagList data={node.frontmatter.tags} />
+          </CardDescription>
+          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+        </Card>
+      ))}
+    </CardWrap>
+    <ReturnButton />
+  </WorkContentsWrapper>
+)
 
 export default Work

@@ -4,23 +4,8 @@ import styled from 'styled-components'
 import Layout from '../components/common/layouts'
 import Img from 'gatsby-image'
 
-type TagType = {
-  name: string,
-  color: string
-}
-const TagsList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin-left: -5px;
-  li {
-    border-radius: 2px;
-    border-style: solid;
-    border-width: 1px;
-    margin: 10px 0 0 5px;
-    padding: 2px 5px;
-  }
-`
+import TagList from '../components/Works/TagList'
+
 const LinkButton = styled.a`
   display: block;
   position: relative;
@@ -50,26 +35,13 @@ const LinkButton = styled.a`
 
 const WorksTemplate = ({ data }) => {
   const workData = data.markdownRemark
-  console.log({workData})
-  const tagStyle = (color: string) => ({
-    borderColor: color,
-    color: color
-  })
   return (
     <>
       <Layout />
       <div>
         <h1>{workData.frontmatter.title}</h1>
         <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
-        <TagsList>
-          {workData.frontmatter.tags.map((tag: TagType, index: number) =>
-            (
-              <li key={`${index}`} style={tagStyle(tag.color)}>
-                {tag.name}
-              </li>
-            )
-          )}
-        </TagsList>
+        <TagList data={workData.frontmatter.tags} />
         <div dangerouslySetInnerHTML={{ __html: workData.html }} />
         {workData.frontmatter.link && <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>}
       </div>
