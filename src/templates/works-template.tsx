@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import styled from 'styled-components'
-import Layout from '../components/common/layouts'
 import Img from 'gatsby-image'
 
 import WorkContentsWrapper from '../components/Works/ContentsWrapper'
 import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
+import ReturnButton from '../components/common/ReturnButton'
 
 const LinkButton = styled.a`
   display: block;
@@ -45,7 +45,10 @@ const WorksTemplate = ({ data }) => {
         <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
         <TagList data={workData.frontmatter.tags} />
         <div dangerouslySetInnerHTML={{ __html: workData.html }} />
-        {workData.frontmatter.link && <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>}
+        {workData.frontmatter.link &&
+          <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
+        }
+        <ReturnButton />
       </WorkContentsWrapper>
     </>
   )
