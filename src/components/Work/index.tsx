@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 import { Works, Tags } from '../../../types/'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'

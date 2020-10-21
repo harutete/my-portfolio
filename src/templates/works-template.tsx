@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Layout from '../components/common/layouts'
+import Img from 'gatsby-image'
 
 type TagType = {
   name: string,
@@ -59,6 +60,7 @@ const WorksTemplate = ({ data }) => {
       <Layout />
       <div>
         <h1>{workData.frontmatter.title}</h1>
+        <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
         <TagsList>
           {workData.frontmatter.tags.map((tag: TagType, index: number) =>
             (
