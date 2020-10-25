@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from "styled-media-query";
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { theme } from './theme'
-
+console.log()
 const ReturnButton: React.FC = () => {
   const Button = styled(AniLink)`
     position: absolute;
@@ -13,6 +14,13 @@ const ReturnButton: React.FC = () => {
     color: ${({theme}) => theme.colors.white};
     font-size: 2rem;
     text-decoration: none;
+    ${media.lessThan('medium')`
+      display: block;
+      position: static;
+      transform: none;
+      text-align: center;
+      margin-top: 50px;
+    `}
   `
 
   return (

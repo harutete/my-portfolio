@@ -6,13 +6,17 @@ import Img from 'gatsby-image'
 import WorkContentsWrapper from '../components/Works/ContentsWrapper'
 import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
+import LinkButton from '../components/Works/detail/LinkButton'
 import ReturnButton from '../components/common/ReturnButton'
 
 const WorkDetailWrap = styled.div`
   background: ${({theme}) => theme.colors.white};
   border-radius: 4px;
   color: ${({theme}) => theme.colors.textColor};
-  margin-top: 30px;
+  width: 85%;
+  max-width: 800px;
+  min-width: 300px;
+  margin: 30px auto 0;
   padding: 15px;
   h2 {
     font-size: 3rem;
@@ -29,36 +33,6 @@ const Description = styled.div`
 `
 const WorkImageWrap = styled.div`
   margin-top: 20px;
-`
-const LinkButton = styled.a`
-  display: block;
-  position: relative;
-  background: ${({theme}) => theme.colors.orange};
-  border-radius: 5px;
-  color: ${({theme}) => theme.colors.white};
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  width: 80%;
-  max-width: 300px;
-  margin: 30px auto;
-  padding: 15px 30px;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%) rotate(45deg);
-    transition: right .2s ease 0s;
-    border-top: 2px solid ${({theme}) => theme.colors.white};
-    border-right: 2px solid ${({theme}) => theme.colors.white};
-    width: 10px;
-    height: 10px;
-  }
-  &:hover::before {
-    right: 10px;
-  }
 `
 
 const WorksTemplate = ({ data }) => {

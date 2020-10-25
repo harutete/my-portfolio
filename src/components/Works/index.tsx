@@ -1,6 +1,7 @@
 import React from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from 'styled-components'
+import media from "styled-media-query";
 import Img from 'gatsby-image'
 
 import { theme } from '../common/theme'
@@ -12,7 +13,10 @@ import ReturnButton from '../common/ReturnButton'
 const CardWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-left: -30px;
+  margin: 0 30px 0 -30px;
+  ${media.lessThan('medium')`
+    margin: 0 0 0 -30px;
+  `}
 `
 const Card = styled.div`
   display: flex;
@@ -22,10 +26,20 @@ const Card = styled.div`
   background: ${({theme}) => theme.colors.white};
   border-radius: 5px;
   color: ${({theme}) => theme.colors.textColor};
-  width: 280px;
+  width: calc(100% / 5 - 30px);
   margin: 30px 0 0 30px;
+  ${media.lessThan('large')`
+    width: calc(100% / 3 - 30px);
+  `}
+  ${media.lessThan('medium')`
+    width: calc(50% - 30px);
+  `}
+  ${media.lessThan('small')`
+    width: 100%;
+  `}
 `
 const CardDescription = styled.div`
+  flex: 1 0 auto;
   padding: 0 15px 15px;
 `
 const CardTitle = styled.h2`
