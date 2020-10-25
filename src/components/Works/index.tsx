@@ -1,7 +1,7 @@
 import React from 'react'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from 'styled-components'
 import media from "styled-media-query";
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Img from 'gatsby-image'
 
 import { theme } from '../common/theme'
