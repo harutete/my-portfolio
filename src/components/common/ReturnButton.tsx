@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import media from "styled-media-query";
+// TODO Add "no-submodule-imports": [true, "gatsby-plugin-transition-link"]
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { theme } from './theme'
