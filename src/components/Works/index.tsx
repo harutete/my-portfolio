@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
+import { theme } from '../common/theme'
 import WorkContentsWrapper from './ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import TagList from './TagList'
@@ -51,7 +52,7 @@ const Work = ({ worksData }) => (
         </Card>
       ))}
     </CardWrap>
-    <ReturnButton />
+    <ReturnButton color={theme.colors.orange} />
   </WorkContentsWrapper>
 )
 

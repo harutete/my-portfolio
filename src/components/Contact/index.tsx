@@ -1,16 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { rgba } from 'polished'
 
+import { theme } from '../common/theme'
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import ReturnButton from '../common/ReturnButton'
 
 const ContactContentsWrapper = styled(detailContentsWrapper)`
-  background: ${({theme}) => rgba(theme.colors.blue, 0.8)};
-  &::after {
-    background: ${({theme}) => rgba(theme.colors.blue, 0.8)};
-  }
+  background: ${({theme}) => theme.colors.blue};
 `
 const AddressText = styled.p`
   font-size: 1.8rem;
@@ -29,7 +26,7 @@ const Contact = () => (
     <PrimaryHeading>Contact</PrimaryHeading>
     <AddressText>ai.takeuchi.10 [at] gmail.com</AddressText>
     <AnnotationText><sup>*</sup>at → @</AnnotationText>
-    <ReturnButton />
+    <ReturnButton color={theme.colors.blue} />
   </ContactContentsWrapper>
 )
 

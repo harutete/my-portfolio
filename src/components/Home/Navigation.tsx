@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import SvgWrap from './SvgWrap'
-import { Link } from "gatsby"
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Navigation: React.FC = () => {
   const NavigationWrapper = styled.nav`
@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
                 fillOpacity="0.8"
               />
             </SvgWrap>
-            <Link to="/works">Works</Link>
+            <AniLink paintDrip hex="#ffcd9f" to="/works">Works</AniLink>
           </div>
         </Work>
         <Profile>
@@ -83,7 +83,7 @@ const Navigation: React.FC = () => {
                 fillOpacity="0.8"
               />
             </SvgWrap>
-            <Link to="/profile">Profile</Link>
+            <AniLink paintDrip hex="#c99fcb" to="/profile">Profile</AniLink>
           </div>
         </Profile>
         <Contact>
@@ -99,7 +99,7 @@ const Navigation: React.FC = () => {
                 fillOpacity="0.8"
               />
             </SvgWrap>
-            <Link to="/contact">Contact</Link>
+            <AniLink paintDrip hex="#9fddff" to="/contact">Contact</AniLink>
           </div>
         </Contact>
       </ul>
