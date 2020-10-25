@@ -4,7 +4,6 @@ import media from "styled-media-query";
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { theme } from './theme'
-console.log()
 const ReturnButton: React.FC = () => {
   const Button = styled(AniLink)`
     position: absolute;
