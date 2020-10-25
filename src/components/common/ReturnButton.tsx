@@ -5,6 +5,7 @@ import media from "styled-media-query";
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { theme } from './theme'
+
 const ReturnButton: React.FC = () => {
   const Button = styled(AniLink)`
     position: absolute;
@@ -29,7 +30,9 @@ const ReturnButton: React.FC = () => {
         paintDrip
         hex={theme.colors.beige}
         to="/"
-      >Back</Button>
+      >
+        Back
+      </Button>
     </div>
   )
 }
