@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import mySkill from '../../../content/mySkill.json'
 
-import { theme } from '../common/theme'
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import ReturnButton from '../common/ReturnButton'
@@ -75,7 +74,7 @@ const Profile = () => {
           </a>
         </li>
       </SnsLinkList>
-      <ReturnButton color={theme.colors.purple} />
+      <ReturnButton />
     </ProfileContentsWrapper>
   )
 }

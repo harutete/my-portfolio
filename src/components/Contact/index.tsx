@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { theme } from '../common/theme'
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import ReturnButton from '../common/ReturnButton'
@@ -26,7 +25,7 @@ const Contact = () => (
     <PrimaryHeading>Contact</PrimaryHeading>
     <AddressText>ai.takeuchi.10 [at] gmail.com</AddressText>
     <AnnotationText><sup>*</sup>at → @</AnnotationText>
-    <ReturnButton color={theme.colors.blue} />
+    <ReturnButton />
   </ContactContentsWrapper>
 )
 

@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-const ReturnButton = () => {
-  const Button = styled(Link)`
+import { theme } from './theme'
+
+const ReturnButton: React.FC = () => {
+  const Button = styled(AniLink)`
     position: absolute;
     top: 50%;
     right: 20px;
@@ -15,7 +17,11 @@ const ReturnButton = () => {
 
   return (
     <div>
-      <Button to="/">Back</Button>
+      <Button
+        paintDrip
+        hex={theme.colors.beige}
+        to="/"
+      >Back</Button>
     </div>
   )
 }

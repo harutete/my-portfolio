@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-import { theme } from '../components/common/theme'
 import WorkContentsWrapper from '../components/Works/ContentsWrapper'
 import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
@@ -81,7 +80,7 @@ const WorksTemplate = ({ data }) => {
             }
           </WorkDescriptionWrap>
         </WorkDetailWrap>
-        <ReturnButton color={theme.colors.orange} />
+        <ReturnButton />
       </WorkContentsWrapper>
     </>
   )
