@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
+import { theme } from '../common/theme'
 import WorkContentsWrapper from './ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import TagList from './TagList'
@@ -43,7 +44,13 @@ const Work = ({ worksData }) => (
         <Card key={`woprk_${node.id}`}>
           <CardDescription>
             <CardTitle>
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              <AniLink
+                paintDrip
+                hex={theme.colors.orange}
+                to={node.fields.slug}
+              >
+                {node.frontmatter.title}
+              </AniLink>
             </CardTitle>
             <TagList data={node.frontmatter.tags} />
           </CardDescription>
