@@ -67,7 +67,13 @@ const Navigation: React.FC = () => {
                 fill={theme.colors.orange}
               />
             </SvgWrap>
-            <AniLink paintDrip hex="#ffcd9f" to="/works">Works</AniLink>
+            <AniLink
+              paintDrip
+              hex={theme.colors.orange}
+              to="/works"
+            >
+              Works
+            </AniLink>
           </div>
         </Work>
         <Profile>
