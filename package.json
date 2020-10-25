@@ -30,6 +30,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.1.1",
+    "styled-media-query": "^2.1.2",
     "styled-reset": "^4.2.1",
     "typeface-caveat": "^0.0.76",
     "typescript": "^3.7.2"
