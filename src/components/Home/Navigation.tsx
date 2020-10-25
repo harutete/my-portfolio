@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import SvgWrap from './SvgWrap'
+import { theme } from '../common/theme'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Navigation: React.FC = () => {
@@ -63,8 +64,7 @@ const Navigation: React.FC = () => {
             >
               <path
                 d="M704.503 346.781C734.254 517.628 651.464 581.866 480.618 611.616C309.771 641.367 76.4135 550.978 46.6629 380.132C16.9123 209.285 94.9625 95.6276 265.809 65.8771C353.927 50.5325 428.85 129.115 513.807 178.502C593.567 224.868 685.563 238.015 704.503 346.781Z"
-                fill="#FFCD9F"
-                fillOpacity="0.8"
+                fill={theme.colors.orange}
               />
             </SvgWrap>
             <AniLink paintDrip hex="#ffcd9f" to="/works">Works</AniLink>
@@ -79,11 +79,16 @@ const Navigation: React.FC = () => {
             >
               <path
                 d="M614.82 608.425C543.61 766.547 439.038 773.285 280.916 702.076C122.793 630.867 40.1004 487.623 111.31 329.5C182.519 171.377 294.31 107 409.226 129.79C584.5 189 614.82 82 725.31 292.5C765.329 375.626 660.154 507.758 614.82 608.425Z"
-                fill="#C99FFF"
-                fillOpacity="0.8"
+                fill={theme.colors.purple}
               />
             </SvgWrap>
-            <AniLink paintDrip hex="#c99fcb" to="/profile">Profile</AniLink>
+            <AniLink
+              paintDrip
+              hex={theme.colors.purple}
+              to="/profile"
+            >
+              Profile
+            </AniLink>
           </div>
         </Profile>
         <Contact>
@@ -95,11 +100,16 @@ const Navigation: React.FC = () => {
             >
               <path
                 d="M552 387C445.191 538 454.226 436 280.809 436C107.391 436 -20.0002 398 3.49984 251.5C26.9999 105 97.4999 0.5 246.5 0.5C332.5 0.5 366.275 61.7195 426.5 107.5C454.727 128.957 509.494 150.322 533.5 170.5C604.124 229.862 588.782 335 552 387Z"
-                fill="#9FDDFF"
-                fillOpacity="0.8"
+                fill={theme.colors.blue}
               />
             </SvgWrap>
-            <AniLink paintDrip hex="#9fddff" to="/contact">Contact</AniLink>
+            <AniLink
+              paintDrip
+              hex={theme.colors.blue}
+              to="/contact"
+            >
+              Contact
+            </AniLink>
           </div>
         </Contact>
       </ul>
