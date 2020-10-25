@@ -52,6 +52,7 @@ const WorksTemplate = ({ data }) => {
             {workData.frontmatter.link &&
               <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
             }
+            <LinkButton href="/works/">Back to Works</LinkButton>
           </WorkDescriptionWrap>
         </WorkDetailWrap>
         <ReturnButton />
