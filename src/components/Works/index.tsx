@@ -50,30 +50,38 @@ const CardTitle = styled.h2`
     text-decoration: none;
   }
 `
-const Work = ({ worksData }) => (
-  <WorkContentsWrapper>
-    <PrimaryHeading>Works</PrimaryHeading>
-    <CardWrap>
-      {worksData.allMarkdownRemark.edges.map(({ node }) => (
-        <Card key={`woprk_${node.id}`}>
-          <CardDescription>
-            <CardTitle>
-              <AniLink
-                paintDrip
-                hex={theme.colors.orange}
-                to={node.fields.slug}
-              >
-                {node.frontmatter.title}
-              </AniLink>
-            </CardTitle>
-            <TagList data={node.frontmatter.tags} />
-          </CardDescription>
-          <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
-        </Card>
-      ))}
-    </CardWrap>
-    <ReturnButton />
-  </WorkContentsWrapper>
-)
+const Work = ({ worksData }) => {
+  const sortedWorks = worksData.allMarkdownRemark.edges.sort((a, b) => {
+    const slug01 = a.node.fields.slug.split('/')[2]
+    const slug02 = b.node.fields.slug.split('/')[2]
+
+    return slug02 - slug01
+  })
+  return (
+    <WorkContentsWrapper>
+      <PrimaryHeading>Works</PrimaryHeading>
+      <CardWrap>
+        {sortedWorks.map(({ node }) => (
+          <Card key={`woprk_${node.id}`}>
+            <CardDescription>
+              <CardTitle>
+                <AniLink
+                  paintDrip
+                  hex={theme.colors.orange}
+                  to={node.fields.slug}
+                >
+                  {node.frontmatter.title}
+                </AniLink>
+              </CardTitle>
+              <TagList data={node.frontmatter.tags} />
+            </CardDescription>
+            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+          </Card>
+        ))}
+      </CardWrap>
+      <ReturnButton />
+    </WorkContentsWrapper>
+  )
+}
 
 export default Work
