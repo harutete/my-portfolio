@@ -22,7 +22,7 @@ const PageSubTitle = styled.p`
 const PagetitleWrapper = () => {
   return (
     <Wrapper>
-      <PageTitle>AI TAKEUCHI's<br />
+      <PageTitle>Harutete's<br />
       Portforio</PageTitle>
       <PageSubTitle>Frontend Engineer.</PageSubTitle>
     </Wrapper>
