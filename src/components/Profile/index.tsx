@@ -33,7 +33,7 @@ const ToolList = styled.ul`
   flex-wrap: wrap;
   margin-left: -5px;
   li {
-    marign: 5px 0 0 5px;
+    margin: 5px 0 0 5px;
   }
 `
 const SnsLinkList = styled(ToolList)`
