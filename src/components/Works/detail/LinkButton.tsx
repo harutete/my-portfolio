@@ -52,7 +52,7 @@ const LinkButton: React.FC<PropType> = (props) => {
         hex={theme.colors.orange}
         to={props.href}
       >
-          {props.children}
+        {props.children}
       </Button>
 
   )
