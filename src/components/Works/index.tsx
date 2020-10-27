@@ -42,6 +42,9 @@ const CardDescription = styled.div`
   flex: 1 0 auto;
   padding: 0 15px 15px;
 `
+const CardImage = styled.div`
+  border: 1px solid #eeeeee;
+`
 const CardTitle = styled.h2`
   font-size: 1.8rem;
   margin-top: 15px;
@@ -75,7 +78,9 @@ const Work = ({ worksData }) => {
               </CardTitle>
               <TagList data={node.frontmatter.tags} />
             </CardDescription>
-            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+            <CardImage>
+              <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+            </CardImage>
           </Card>
         ))}
       </CardWrap>
