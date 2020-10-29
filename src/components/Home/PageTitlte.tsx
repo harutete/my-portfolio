@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import media from "styled-media-query";
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,6 +9,11 @@ const Wrapper = styled.div`
   font-family: 'Caveat', cursive;
   text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
   padding-left: 50px;
+  ${media.lessThan('large')`
+    text-align: center;
+    padding-left: 0;
+    height: 100%;
+  `}
 `
 const PageTitle = styled.h1`
   font-size: 10rem;

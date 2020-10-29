@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import media from "styled-media-query";
 
 const baseWrap = styled.div`
   display: flex;
@@ -19,8 +20,11 @@ export const detailContentsWrapper:React.FC = (props) => {
   const Wrap = styled(baseWrap)`
     flex-direction: column;
     justify-content: center;
-    color: ${({theme}) => theme.colors.white};
     padding: 50px;
+    color: ${({theme}) => theme.colors.white};
+    ${media.lessThan('medium')`
+      padding: 30px;
+    `}
   `
 
   return (

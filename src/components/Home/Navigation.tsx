@@ -1,54 +1,132 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import SvgWrap from './SvgWrap'
-import { theme } from '../common/theme'
+import React, { FC, useState } from 'react'
+import styled from 'styled-components'
+import media from "styled-media-query";
+import { rgba } from 'polished'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-const Navigation: React.FC = () => {
+import { theme } from '../common/theme'
+import SvgWrap from './SvgWrap'
+
+const Navigation: FC = () => {
+  const [ state, setState ] = useState(false)
   const NavigationWrapper = styled.nav`
     position: relative;
+    ${media.lessThan('large')`
+      position: absolute;
+      top: -100%;
+      left: 0;
+      transition: top .2s ease 0s;
+      width: 100%;
+      height: 100%;
+      &.is-active {
+        top: 0;
+      }
+    `}
+  `
+  const NavigationButton = styled.button`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    span {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: ${({theme}) => theme.colors.textColor};
+      width: 35px;
+      height: 2px;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background: ${({theme}) => theme.colors.textColor};
+        width: 35px;
+        height: 2px;
+      }
+      &::before {
+        top: 15px;
+      }
+      &::after {
+        top: 35px;
+      }
+    }
+  `
+  const NavigationList = styled.ul`
+    ${media.lessThan('large')`
+      background: ${({theme}) => rgba(theme.colors.textColor, 0.6)}
+    `}
   `
   const NavigationItem = styled.li`
-    position: absolute;
-    left: 0;
-    a {
+    ${media.greaterThan('large')`
       position: absolute;
-      left: 100px;
-
+      left: 0;
+      a {
+        position: absolute;
+        left: 100px;
+        font-size: 5rem;
+      }
+    `}
+    ${media.lessThan('large')`
+      text-align: center;
+      svg {
+        display: none;
+      }
+      a {
+        display: inline-block;
+        font-size: 2rem;
+        padding: 10px 0;
+      }
+    `}
+    a {
       color: ${({theme}) => theme.colors.white};
       font-family: 'Caveat', cursive;
-      font-size: 5rem;
-      text-decoration: none;
-    }
+      text-decoration: none
+      }
   `
   const Work = styled(NavigationItem)`
-    top: -200px;
-    a {
-      top: 230px;
-    }
+    ${media.greaterThan('large')`
+      top: -200px;
+      a {
+        top: 230px;
+      }
+    `}
   `
   const Profile = styled(NavigationItem)`
-    top: 50%;
-    left: auto;
-    right: -150px;
-    transform: translateY(-50%);
-    a {
+    ${media.greaterThan('large')`
       top: 50%;
+      left: auto;
+      right: -150px;
       transform: translateY(-50%);
-    }
+      a {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    `}
   `
   const Contact = styled(NavigationItem)`
-    bottom: -100px;
-    a {
-      bottom: 130px;
-    }
+    ${media.greaterThan('large')`
+      bottom: -100px;
+      a {
+        bottom: 130px;
+      }
+    `}
   `
 
   return (
-    <NavigationWrapper>
-      <ul>
-        <Work>
-          <div>
+    <>
+      <NavigationButton
+        onClick={() => setState(!state)}
+        aria-label={state ? 'メニューを閉じる' : 'メニューを開く'}
+      >
+        <span></span>
+      </NavigationButton>
+      <NavigationWrapper>
+        <NavigationList>
+          <Work>
             <SvgWrap
               width="743"
               height="679"
@@ -67,10 +145,8 @@ const Navigation: React.FC = () => {
             >
               Works
             </AniLink>
-          </div>
-        </Work>
-        <Profile>
-          <div>
+          </Work>
+          <Profile>
             <SvgWrap
               width="794"
               height="817"
@@ -89,10 +165,8 @@ const Navigation: React.FC = () => {
             >
               Profile
             </AniLink>
-          </div>
-        </Profile>
-        <Contact>
-          <div>
+          </Profile>
+          <Contact>
             <SvgWrap
               width="584"
               height="470"
@@ -111,10 +185,10 @@ const Navigation: React.FC = () => {
             >
               Contact
             </AniLink>
-          </div>
-        </Contact>
-      </ul>
-    </NavigationWrapper>
+          </Contact>
+        </NavigationList>
+      </NavigationWrapper>
+    </>
   )
 }
 
