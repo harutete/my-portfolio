@@ -14,7 +14,7 @@ const HomeContentsWrapper = styled(ContentsWrapper)`
     }
   `}
   ${media.lessThan('large')`
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     height: 100%;
     & > * {

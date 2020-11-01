@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 type Props = {
-  width: string,
-  height: string,
+  width?: string,
+  height?: string,
   viewBox: string,
 }
 
@@ -11,8 +11,8 @@ const SvgWrap: React.FC<Props> = (props) => {
   const Wrap = styled.svg`
     display: block;
   `
-  const SvgWidth = props.width || 0
-  const SvgHeight = props.height || 0
+  const SvgWidth = props.width || ''
+  const SvgHeight = props.height || ''
   const SvgViewBox = props.viewBox || '0, 0, 0, 0'
 
   return (

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import media from "styled-media-query";
 import { rgba } from 'polished'
@@ -8,90 +8,67 @@ import { theme } from '../common/theme'
 import SvgWrap from './SvgWrap'
 
 const Navigation: FC = () => {
-  const [ state, setState ] = useState(false)
   const NavigationWrapper = styled.nav`
     position: relative;
     ${media.lessThan('large')`
-      position: absolute;
-      top: -100%;
-      left: 0;
-      transition: top .2s ease 0s;
-      width: 100%;
-      height: 100%;
-      &.is-active {
-        top: 0;
-      }
-    `}
-  `
-  const NavigationButton = styled.button`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    span {
-      position: absolute;
-      top: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: ${({theme}) => theme.colors.textColor};
-      width: 35px;
-      height: 2px;
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        background: ${({theme}) => theme.colors.textColor};
-        width: 35px;
-        height: 2px;
-      }
-      &::before {
-        top: 15px;
-      }
-      &::after {
-        top: 35px;
-      }
-    }
-  `
-  const NavigationList = styled.ul`
-    ${media.lessThan('large')`
-      background: ${({theme}) => rgba(theme.colors.textColor, 0.6)}
+      margin-top: 20px;
     `}
   `
   const NavigationItem = styled.li`
     ${media.greaterThan('large')`
       position: absolute;
       left: 0;
+      width: 100%;
       a {
         position: absolute;
         left: 100px;
+        color: ${({theme}) => theme.colors.white};
         font-size: 5rem;
       }
     `}
     ${media.lessThan('large')`
       text-align: center;
+      margin-top: 15px;
       svg {
         display: none;
       }
       a {
+        position: relative;
         display: inline-block;
-        font-size: 2rem;
+        color: ${({theme}) => theme.colors.textColor};
+        text-shadow: 1px 1px 1px ${({theme}) => theme.colors.white};
+        font-size: 3rem;
         padding: 10px 0;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -15px;
+          z-index: -1;
+          border-radius: 80% 50% 70% 70%;
+          width: 40px;
+          height: 40px;
+        }
       }
     `}
     a {
-      color: ${({theme}) => theme.colors.white};
       font-family: 'Caveat', cursive;
       text-decoration: none
-      }
+    }
   `
   const Work = styled(NavigationItem)`
     ${media.greaterThan('large')`
       top: -200px;
+      z-index: 1;
       a {
         top: 230px;
+      }
+    `}
+    ${media.lessThan('large')`
+      a {
+        &::before {
+          background: ${({theme}) => rgba(theme.colors.orange, 0.8)};
+        }
       }
     `}
   `
@@ -101,35 +78,42 @@ const Navigation: FC = () => {
       left: auto;
       right: -150px;
       transform: translateY(-50%);
+      z-index: 2;
       a {
         top: 50%;
         transform: translateY(-50%);
+      }
+    `}
+    ${media.lessThan('large')`
+      a {
+        &::before {
+          background: ${({theme}) => rgba(theme.colors.purple, 0.8)};
+        }
       }
     `}
   `
   const Contact = styled(NavigationItem)`
     ${media.greaterThan('large')`
       bottom: -100px;
+      z-index: 1;
       a {
         bottom: 130px;
+      }
+    `}
+    ${media.lessThan('large')`
+      a {
+        &::before {
+          background: ${({theme}) => rgba(theme.colors.blue, 0.8)};
+        }
       }
     `}
   `
 
   return (
-    <>
-      <NavigationButton
-        onClick={() => setState(!state)}
-        aria-label={state ? 'メニューを閉じる' : 'メニューを開く'}
-      >
-        <span></span>
-      </NavigationButton>
       <NavigationWrapper>
-        <NavigationList>
+        <ul>
           <Work>
             <SvgWrap
-              width="743"
-              height="679"
               viewBox="0 0 743 679"
             >
               <path
@@ -148,8 +132,6 @@ const Navigation: FC = () => {
           </Work>
           <Profile>
             <SvgWrap
-              width="794"
-              height="817"
               viewBox="0 0 794 817"
             >
               <path
@@ -168,8 +150,6 @@ const Navigation: FC = () => {
           </Profile>
           <Contact>
             <SvgWrap
-              width="584"
-              height="470"
               viewBox="0 0 584 470"
             >
               <path
@@ -186,9 +166,8 @@ const Navigation: FC = () => {
               Contact
             </AniLink>
           </Contact>
-        </NavigationList>
+        </ul>
       </NavigationWrapper>
-    </>
   )
 }
 
