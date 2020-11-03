@@ -22,7 +22,7 @@ const HomeContentsWrapper = styled(ContentsWrapper)`
     }
   `}
 `
-const Home = () => (
+const Home: React.FC = () => (
   <HomeContentsWrapper>
     <Navigation />
     <PagetitleWrapper />

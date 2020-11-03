@@ -1,15 +1,15 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import Layout from '../../components/common/layouts'
+
+import Layout from '../../components/common/layout'
 import WorkComponent from '../../components/Works'
 
-const Home = ({ data }) =>
-(
-  <>
-    <Layout />
-    <WorkComponent worksData={data} />
-  </>
-)
+const Works = ({ data }) =>
+  (
+    <Layout>
+      <WorkComponent worksData={data} />
+    </Layout>
+  )
 
 export const query = graphql`
   query {
@@ -42,4 +42,4 @@ export const query = graphql`
   }
 `
 
-export default Home
+export default Works
