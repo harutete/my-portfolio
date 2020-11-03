@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-
+import Layout from '../components/common/layout'
 import WorkContentsWrapper from '../components/Works/ContentsWrapper'
 import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
@@ -39,24 +39,26 @@ const WorkImageWrap = styled.div`
 const WorksTemplate = ({ data }) => {
   const workData = data.markdownRemark
   return (
-    <WorkContentsWrapper>
-      <PrimaryHeading>Works</PrimaryHeading>
-      <WorkDetailWrap>
-        <h2>{workData.frontmatter.title}</h2>
-        <WorkImageWrap>
-          <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
-        </WorkImageWrap>
-        <WorkDescriptionWrap>
-          <TagList data={workData.frontmatter.tags} />
-          <Description dangerouslySetInnerHTML={{ __html: workData.html }} />
-          {workData.frontmatter.link &&
-            <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
-          }
-          <LinkButton href="/works/">Back to Works</LinkButton>
-        </WorkDescriptionWrap>
-      </WorkDetailWrap>
-      <ReturnButton />
-    </WorkContentsWrapper>
+    <Layout>
+      <WorkContentsWrapper>
+        <PrimaryHeading>Works</PrimaryHeading>
+        <WorkDetailWrap>
+          <h2>{workData.frontmatter.title}</h2>
+          <WorkImageWrap>
+            <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
+          </WorkImageWrap>
+          <WorkDescriptionWrap>
+            <TagList data={workData.frontmatter.tags} />
+            <Description dangerouslySetInnerHTML={{ __html: workData.html }} />
+            {workData.frontmatter.link &&
+              <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
+            }
+            <LinkButton href="/works/">Back to Works</LinkButton>
+          </WorkDescriptionWrap>
+        </WorkDetailWrap>
+        <ReturnButton />
+      </WorkContentsWrapper>
+    </Layout>
   )
 }
 export const query = graphql`

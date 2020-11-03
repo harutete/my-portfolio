@@ -1,10 +1,14 @@
 import React from 'react'
 import { graphql } from "gatsby"
+
+import Layout from '../../components/common/layout'
 import WorkComponent from '../../components/Works'
 
 const Works = ({ data }) =>
   (
-    <WorkComponent worksData={data} />
+    <Layout>
+      <WorkComponent worksData={data} />
+    </Layout>
   )
 
 export const query = graphql`
