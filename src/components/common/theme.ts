@@ -1,5 +1,3 @@
-import 'styled-components'
-
 export const theme = {
   colors: {
     textColor: '#333333',
@@ -11,9 +9,3 @@ export const theme = {
     beige: '#fffaf3'
   }
 } as const
-
-type AppTheme = typeof theme
-
-declare module 'styled-components' {
-  interface DefaultTheme extends AppTheme {}
-}
