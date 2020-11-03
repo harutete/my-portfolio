@@ -35,7 +35,7 @@ export const Layout: React.FC = ({ children }) => {
   return (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <div>{children}</div>
+    {children}
   </ThemeProvider>
 )
   }
