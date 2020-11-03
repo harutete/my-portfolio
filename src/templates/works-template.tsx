@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import Layout from '../components/common/layouts'
 
 import WorkContentsWrapper from '../components/Works/ContentsWrapper'
 import PrimaryHeading from '../components/common/PrimaryHeading'
@@ -38,7 +39,7 @@ const WorkImageWrap = styled.div`
 const WorksTemplate = ({ data }) => {
   const workData = data.markdownRemark
   return (
-    <>
+    <Layout>
       <WorkContentsWrapper>
         <PrimaryHeading>Works</PrimaryHeading>
         <WorkDetailWrap>
@@ -57,7 +58,7 @@ const WorksTemplate = ({ data }) => {
         </WorkDetailWrap>
         <ReturnButton />
       </WorkContentsWrapper>
-    </>
+    </Layout>
   )
 }
 export const query = graphql`

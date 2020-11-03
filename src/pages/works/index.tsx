@@ -5,10 +5,9 @@ import WorkComponent from '../../components/Works'
 
 const Home = ({ data }) =>
 (
-  <>
-    <Layout />
+  <Layout>
     <WorkComponent worksData={data} />
-  </>
+  </Layout>
 )
 
 export const query = graphql`

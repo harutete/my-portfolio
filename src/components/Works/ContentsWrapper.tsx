@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 
-const WorkContentsWrapper = ({ children }) => {
+const WorkContentsWrapper: React.FC = ({ children }) => {
   const Wrapper = styled(detailContentsWrapper)`
     background: ${({theme}) =>theme.colors.orange};
   `

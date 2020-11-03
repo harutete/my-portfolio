@@ -4,9 +4,8 @@ import ContactComponent from '../components/Contact'
 
 export default function Contact() {
   return (
-    <>
-      <Layout />
+    <Layout>
       <ContactComponent />
-    </>
+    </Layout>
   )
 }
