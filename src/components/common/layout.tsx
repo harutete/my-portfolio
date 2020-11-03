@@ -31,13 +31,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const Layout = ({element}: any) => (
-  <React.Fragment>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      {element}
-    </ThemeProvider>
-  </React.Fragment>
+export const Layout: React.FC = ({ children }) => {
+  return (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <div>{children}</div>
+  </ThemeProvider>
 )
-
+  }
 export default Layout

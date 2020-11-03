@@ -1,3 +1,6 @@
-import { Layout } from './src/components/common/layouts'
+import React from 'react'
+import { Layout } from './src/components/common/layout'
 
-export const wrapRootElement = Layout
+export const wrapRootElement = ({ element }) => {
+  return <Layout>{element}</Layout>
+}
