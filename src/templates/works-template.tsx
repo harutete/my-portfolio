@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from "gatsby"
+import { WorkDetailPageQuery } from '../../types/graphql-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
@@ -9,6 +10,10 @@ import PrimaryHeading from '../components/common/PrimaryHeading'
 import TagList from '../components/Works/TagList'
 import LinkButton from '../components/Works/detail/LinkButton'
 import ReturnButton from '../components/common/ReturnButton'
+
+type Props = {
+  data: WorkDetailPageQuery
+}
 
 const WorkDetailWrap = styled.div`
   background: ${({theme}) => theme.colors.white};
@@ -36,7 +41,7 @@ const WorkImageWrap = styled.div`
   margin-top: 20px;
 `
 
-const WorksTemplate = ({ data }) => {
+const WorksTemplate: React.FC<Props> = ({ data }) => {
   const workData = data.markdownRemark
   return (
     <Layout>
@@ -45,7 +50,7 @@ const WorksTemplate = ({ data }) => {
         <WorkDetailWrap>
           <h2>{workData.frontmatter.title}</h2>
           <WorkImageWrap>
-            <Img fluid={workData.frontmatter.featuredImage.childImageSharp.fluid} />
+            <Img fluid={workData?.frontmatter?.featuredImage?.childImageSharp?.fluid} />
           </WorkImageWrap>
           <WorkDescriptionWrap>
             <TagList data={workData.frontmatter.tags} />
@@ -62,7 +67,7 @@ const WorksTemplate = ({ data }) => {
   )
 }
 export const query = graphql`
-  query($slug: String!) {
+  query WorkDetailPage($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
