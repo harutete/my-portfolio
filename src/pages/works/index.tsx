@@ -10,11 +10,11 @@ type Props = {
 }
 
 const Works: React.FC<Props> = ({ data }) =>
-  (
-    <Layout>
-      <WorkComponent worksData={data} />
-    </Layout>
-  )
+(
+  <Layout title="works" description="制作物の一覧です">
+    <WorkComponent worksData={data} />
+  </Layout>
+)
 
 export const query = graphql`
   query WorksPage {

@@ -4,6 +4,12 @@ import reset from 'styled-reset'
 import { theme } from './theme'
 import 'typeface-caveat'
 
+import Head from './Head'
+
+type Props = {
+  title: string,
+  description: string
+}
 const GlobalStyle = createGlobalStyle`
   ${reset}
   :root {
@@ -31,11 +37,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const Layout: React.FC = ({ children }) => {
+export const Layout: React.FC<Props> = (props) => {
   return (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={ theme }>
     <GlobalStyle />
-    {children}
+    <Head title={ props.title } description={props.description} />
+    { props.children }
   </ThemeProvider>
 )
   }
