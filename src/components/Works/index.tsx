@@ -1,4 +1,5 @@
 import React from 'react'
+import { WorksPageQuery } from '../../../types/graphql-types'
 import styled from 'styled-components'
 import media from "styled-media-query";
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -10,6 +11,9 @@ import PrimaryHeading from '../common/PrimaryHeading'
 import TagList from './TagList'
 import ReturnButton from '../common/ReturnButton'
 
+type Props = {
+  worksData: WorksPageQuery
+}
 const CardWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -53,10 +57,10 @@ const CardTitle = styled.h2`
     text-decoration: none;
   }
 `
-const Work = ({ worksData }) => {
-  const sortedWorks = worksData.allMarkdownRemark.edges.sort((a, b) => {
-    const slug01 = a.node.fields.slug.split('/')[2]
-    const slug02 = b.node.fields.slug.split('/')[2]
+const Work: React.FC<Props> = ({ worksData }) => {
+  const sortedWorks = [...worksData.allMarkdownRemark.edges].sort((a, b) => {
+    const slug01 = Number(a.node.fields.slug.split('/')[2])
+    const slug02 = Number(b.node.fields.slug.split('/')[2])
 
     return slug02 - slug01
   })
@@ -65,7 +69,7 @@ const Work = ({ worksData }) => {
       <PrimaryHeading>Works</PrimaryHeading>
       <CardWrap>
         {sortedWorks.map(({ node }) => (
-          <Card key={`woprk_${node.id}`}>
+          <Card key={`work_${node.id}`}>
             <CardDescription>
               <CardTitle>
                 <AniLink

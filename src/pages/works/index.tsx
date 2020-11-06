@@ -1,10 +1,15 @@
 import React from 'react'
 import { graphql } from "gatsby"
+import { WorksPageQuery } from '../../../types/graphql-types'
 
 import Layout from '../../components/common/layout'
 import WorkComponent from '../../components/Works'
 
-const Works = ({ data }) =>
+type Props = {
+  data: WorksPageQuery
+}
+
+const Works: React.FC<Props> = ({ data }) =>
   (
     <Layout>
       <WorkComponent worksData={data} />
@@ -12,7 +17,7 @@ const Works = ({ data }) =>
   )
 
 export const query = graphql`
-  query {
+  query WorksPage {
     allMarkdownRemark {
       totalCount
       edges {

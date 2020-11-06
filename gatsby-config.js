@@ -10,6 +10,12 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-transition-link`,
     {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: `types/graphql-types.d.ts`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,

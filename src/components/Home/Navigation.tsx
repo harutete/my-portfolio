@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import media from "styled-media-query";
 import { rgba } from 'polished'
@@ -7,7 +7,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { theme } from '../common/theme'
 import SvgWrap from './SvgWrap'
 
-const Navigation: FC = () => {
+const Navigation: React.FC = () => {
   const NavigationWrapper = styled.nav`
     position: relative;
     ${media.lessThan('large')`
