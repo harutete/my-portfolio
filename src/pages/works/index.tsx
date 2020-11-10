@@ -11,7 +11,11 @@ type Props = {
 
 const Works: React.FC<Props> = ({ data }) =>
 (
-  <Layout title="works" description="制作物の一覧です">
+  <Layout
+    title="works"
+    description="制作物の一覧です"
+    isTextLight={true}
+  >
     <WorkComponent worksData={data} />
   </Layout>
 )

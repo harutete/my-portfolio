@@ -5,7 +5,11 @@ import ContactComponent from '../components/Contact'
 
 const Contact = () =>
 (
-  <Layout title="Contact" description="お問い合わせについて">
+  <Layout
+    title="Contact"
+    description="お問い合わせについて"
+    isTextLight={true}
+  >
     <ContactComponent />
   </Layout>
 )

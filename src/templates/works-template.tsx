@@ -44,7 +44,11 @@ const WorkImageWrap = styled.div`
 const WorksTemplate: React.FC<Props> = ({ data }) => {
   const workData = data.markdownRemark
   return (
-    <Layout title={workData.frontmatter.title} description="制作物の詳細です">
+    <Layout
+      title={workData.frontmatter.title}
+      description="制作物の詳細です"
+      isTextLight={true}
+    >
       <WorkContentsWrapper>
         <PrimaryHeading>Works</PrimaryHeading>
         <WorkDetailWrap>

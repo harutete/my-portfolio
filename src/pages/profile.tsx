@@ -5,7 +5,11 @@ import ProfileComponent from '../components/Profile'
 
 const Profile = () =>
 (
-  <Layout title="profile" description="スキルを簡単に記載しています">
+  <Layout
+    title="profile"
+    description="スキルを簡単に記載しています"
+    isTextLight={true}
+  >
     <ProfileComponent />
   </Layout>
 )

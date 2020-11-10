@@ -5,7 +5,11 @@ import HomeComponent from '../components/Home'
 
 const Home = () =>
 (
-  <Layout title="home" description="Haruteteのポートフォリオです">
+  <Layout
+    title="home"
+    description="Haruteteのポートフォリオです"
+    isTextLight={false}
+  >
     <HomeComponent />
   </Layout>
 )

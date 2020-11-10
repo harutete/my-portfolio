@@ -10,13 +10,12 @@ const baseWrap = styled.div`
   position: relative;
   min-height: 100vh;
 `
-export const ContentsWrapper:React.FC = (props) => {
+export const ContentsWrapper: React.FC = (props) => {
   const Wrap = styled(baseWrap)``
 
   return (
     <Wrap {...props}>
       {props.children}
-      <Footer />
     </Wrap>
   )
 }
