@@ -1,6 +1,4 @@
 import React from 'react'
-import { Layout } from './src/components/common/layout'
+import Provider from './src/components/common/Provider'
 
-export const wrapRootElement = ({ element }) => {
-  return <Layout>{element}</Layout>
-}
+export const wrapRootElement = ({ element }) => <Provider>{element}</Provider>
