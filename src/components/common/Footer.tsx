@@ -15,6 +15,7 @@ const FooterComponent = styled.footer`
   padding: 5px 0;
   small {
     font-size: 1rem;
+    text-shadow: 1px 1px 1px ${({theme}) => theme.colors.white};
     &.is-text-light {
       color: ${({ theme }) => theme.colors.white};
     }
