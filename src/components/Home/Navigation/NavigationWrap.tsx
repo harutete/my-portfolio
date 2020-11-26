@@ -7,10 +7,9 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { theme } from '../../common/theme'
 import SvgWrap from './SvgWrap'
 
-
-import HomeSvg from './HomeSvg'
 import WorksSvg from './WorksSvg'
 import ProfileSvg from './ProfileSvg'
+import ContactSvg from './ContactSvg'
 
 const Navigation: React.FC = () => {
   const NavigationWrapper = styled.nav`
@@ -48,6 +47,10 @@ const Navigation: React.FC = () => {
         font-size: 3rem;
         padding: 10px 0;
         & > svg {
+          position: absolute;
+          top: 0;
+          left: -15px;
+          z-index: -1;
           width: 40px;
           height: 40px;
         }
@@ -58,10 +61,10 @@ const Navigation: React.FC = () => {
       text-decoration: none
     }
   `
-  const Work = styled(NavigationItem)`
+  const Works = styled(NavigationItem)`
     ${media.greaterThan('large')`
       top: -200px;
-      z-index: 1;z
+      z-index: 1;
       a {
         top: 230px;
       }
@@ -98,7 +101,11 @@ const Navigation: React.FC = () => {
     ${media.greaterThan('large')`
       bottom: -100px;
       z-index: 1;
+      & > svg {
+        margin-right: auto;
+      }
       a {
+        left: 50px;
         bottom: 130px;
       }
     `}
@@ -114,17 +121,17 @@ const Navigation: React.FC = () => {
   return (
       <NavigationWrapper>
         <ul>
-          <Work>
-            <HomeSvg width="743" height="679" />
+          <Works>
+            <WorksSvg width="743" height="679" />
             <AniLink
               paintDrip
               hex={theme.colors.orange}
               to="/works"
             >
-              <HomeSvg />
+              <WorksSvg />
               Works
             </AniLink>
-          </Work>
+          </Works>
           <Profile>
             <ProfileSvg width="794" height="817" />
             <AniLink
@@ -137,13 +144,13 @@ const Navigation: React.FC = () => {
             </AniLink>
           </Profile>
           <Contact>
-            <WorksSvg width="583" height="470" />
+            <ContactSvg width="583" height="470" />
             <AniLink
               paintDrip
               hex={theme.colors.blue}
               to="/contact"
             >
-              <WorksSvg />
+              <ContactSvg />
               Contact
             </AniLink>
           </Contact>
