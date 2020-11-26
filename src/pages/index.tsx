@@ -3,10 +3,15 @@ import React from 'react'
 import Layout from '../components/common/layout'
 import HomeComponent from '../components/Home'
 
-export default function Home() {
-  return (
-    <Layout>
-      <HomeComponent />
-    </Layout>
-  )
-}
+const Home = () =>
+(
+  <Layout
+    title="home"
+    description="Haruteteのポートフォリオです"
+    isTextLight={false}
+  >
+    <HomeComponent />
+  </Layout>
+)
+
+export default Home

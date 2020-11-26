@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
