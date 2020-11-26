@@ -4,7 +4,7 @@ import media from "styled-media-query";
 
 import { ContentsWrapper } from '../common/ContentsWrapper'
 import PagetitleWrapper from './PageTitlte'
-import Navigation from './Navigation'
+import Navigation from './Navigation/NavigationWrap'
 
 const HomeContentsWrapper = styled(ContentsWrapper)`
   ${media.greaterThan('large')`
