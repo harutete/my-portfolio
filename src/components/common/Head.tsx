@@ -5,11 +5,11 @@ type Props = {
   title: string,
   description: string
 }
-const Head: React.FC<Props> = (props) => (
+const Head: React.FC<Props> = ({ title, description }) => (
   <Helmet>
     <meta charSet="utf-8" />
-    <title>{ props.title }</title>
-    <meta name="description" content={ props.description } />
+    <title>{ title }</title>
+    <meta name="description" content={ description } />
     <meta name="robots" content="noindex, noforrow" />
     <html lang="ja" />
   </Helmet>

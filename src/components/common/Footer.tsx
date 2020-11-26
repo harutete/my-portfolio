@@ -18,13 +18,14 @@ const FooterComponent = styled.footer`
     text-shadow: 1px 1px 1px ${({theme}) => theme.colors.white};
     &.is-text-light {
       color: ${({ theme }) => theme.colors.white};
+      text-shadow: none;
     }
   }
 `
-const Footer: React.FC<Props> = (props) =>
+const Footer: React.FC<Props> = ({ isTextLight }) =>
 (
   <FooterComponent>
-    <small className={props.isTextLight ? 'is-text-light' : ''}>
+    <small className={isTextLight ? 'is-text-light' : ''}>
       &copy; 2020 harutete.
     </small>
   </FooterComponent>

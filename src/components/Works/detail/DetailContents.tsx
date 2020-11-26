@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-type PropType = {
+
+type Props = {
   frontmatter: any
 }
+
 const Wrapper = styled.div`
   background: ${({theme}) => theme.colors.white};
   border-radius: 4px;
@@ -18,7 +20,7 @@ const Title = styled.h2`
   font-size: 3rem;
 `
 
-const DetailContents: React.FC<PropType> = (props) => (
+const DetailContents: React.FC<Props> = (props) => (
   <Wrapper>
     <Title>{props.frontmatter.title}</Title>
   </Wrapper>

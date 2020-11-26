@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const Provider = ({ children }) => (
+export const Provider: React.FC = ({ children }) => (
   <ThemeProvider theme={ theme }>
     <GlobalStyle />
     { children }
