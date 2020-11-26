@@ -22,7 +22,6 @@ const Navigation: React.FC = () => {
     ${media.greaterThan('large')`
       position: absolute;
       left: 0;
-      width: 100%;
       a {
         position: absolute;
         left: 100px;
@@ -84,6 +83,12 @@ const Navigation: React.FC = () => {
       right: -150px;
       transform: translateY(-50%);
       z-index: 2;
+      & > svg {
+
+      }
+      & > svg {
+        margin-left: auto;
+      }
       a {
         top: 50%;
         transform: translateY(-50%);
