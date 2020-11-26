@@ -4,10 +4,10 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { theme } from '../../common/theme'
 
-type PropType = {
+type Props = {
   href: string
 }
-const LinkButton: React.FC<PropType> = (props) => {
+const LinkButton: React.FC<Props> = (props) => {
   const isExternalLink = /^https:\/\//.test(props.href)
   const Button = styled(AniLink)`
     display: block;

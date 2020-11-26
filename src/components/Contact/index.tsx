@@ -20,7 +20,7 @@ const AnnotationText = styled.p`
   }
 `
 
-const Contact = () => (
+const Contact: React.FC = () => (
   <ContactContentsWrapper>
     <PrimaryHeading>Contact</PrimaryHeading>
     <AddressText>ai.takeuchi.10 [at] gmail.com</AddressText>

@@ -80,7 +80,7 @@ const Work: React.FC<Props> = ({ worksData }) => {
                   {node.frontmatter.title}
                 </AniLink>
               </CardTitle>
-              <TagList data={node.frontmatter.tags} />
+              <TagList tags={node.frontmatter.tags} />
             </CardDescription>
             <CardImage>
               <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />

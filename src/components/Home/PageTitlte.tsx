@@ -31,7 +31,7 @@ const PageSubTitle = styled.p`
   `}
 `
 
-const PagetitleWrapper = () => {
+const PagetitleWrapper: React.FC = () => {
   return (
     <Wrapper>
       <PageTitle>Harutete's<br />

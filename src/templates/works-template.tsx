@@ -57,7 +57,7 @@ const WorksTemplate: React.FC<Props> = ({ data }) => {
             <Img fluid={workData?.frontmatter?.featuredImage?.childImageSharp?.fluid} />
           </WorkImageWrap>
           <WorkDescriptionWrap>
-            <TagList data={workData.frontmatter.tags} />
+            <TagList tags={workData.frontmatter.tags} />
             <Description dangerouslySetInnerHTML={{ __html: workData.html }} />
             {workData.frontmatter.link &&
               <LinkButton href={workData.frontmatter.link}>Code on Github</LinkButton>
