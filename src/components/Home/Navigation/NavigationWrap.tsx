@@ -5,7 +5,6 @@ import { rgba } from 'polished'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { theme } from '../../common/theme'
-import SvgWrap from './SvgWrap'
 
 import WorksSvg from './WorksSvg'
 import ProfileSvg from './ProfileSvg'
