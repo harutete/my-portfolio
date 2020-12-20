@@ -21,6 +21,11 @@ const Navigation: React.FC = () => {
     ${media.greaterThan('large')`
       position: absolute;
       left: 0;
+      & > svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
       a {
         position: absolute;
         left: 100px;
@@ -63,6 +68,8 @@ const Navigation: React.FC = () => {
     ${media.greaterThan('large')`
       top: -200px;
       z-index: 1;
+      max-width: calc(743 * 100vw / 1440);
+      max-height: calc(679 * 100vh / 900);
       a {
         top: 230px;
       }
@@ -82,9 +89,8 @@ const Navigation: React.FC = () => {
       right: -150px;
       transform: translateY(-50%);
       z-index: 2;
-      & > svg {
-
-      }
+      max-width: calc(647 * 100vw / 1440);
+      max-height: calc(620 * 100vh / 900);
       & > svg {
         margin-left: auto;
       }
@@ -105,9 +111,8 @@ const Navigation: React.FC = () => {
     ${media.greaterThan('large')`
       bottom: -100px;
       z-index: 1;
-      & > svg {
-        margin-right: auto;
-      }
+      max-width: calc(583 * 100vw / 1440);
+      max-height: calc(470 * 100vh / 900);
       a {
         left: 50px;
         bottom: 130px;
@@ -137,7 +142,7 @@ const Navigation: React.FC = () => {
             </AniLink>
           </Works>
           <Profile>
-            <ProfileSvg width="794" height="817" />
+            <ProfileSvg width="647" height="620" />
             <AniLink
               paintDrip
               hex={theme.colors.purple}
