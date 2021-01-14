@@ -52,15 +52,15 @@ const Profile = () => {
       <PrimaryHeading>Profile</PrimaryHeading>
       <Heading02>[Skill]</Heading02>
       <SkillList>
-        {mySkill.contents.map((skill, index) =>
+        {mySkill.contents.map(skill =>
           <>
-            <dt key={`skill_${index}`}>
+            <dt key={`skill_${skill.name}`}>
               {skill.name}
             </dt>
             <dd>
               <ToolList>
                 {skill.tools.map(tool =>
-                  <li>{tool}</li>
+                  <li key={`tool_${tool}`}>{tool}</li>
                 )}
               </ToolList>
             </dd>
