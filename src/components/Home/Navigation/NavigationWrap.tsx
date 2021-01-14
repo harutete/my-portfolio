@@ -22,7 +22,6 @@ const Navigation: React.FC = () => {
       position: absolute;
       left: 0;
       & > svg {
-        display: block;
         width: 100%;
         height: 100%;
       }
@@ -31,32 +30,26 @@ const Navigation: React.FC = () => {
         left: 100px;
         color: ${({theme}) => theme.colors.white};
         font-size: 5rem;
-        & > svg {
-          display: none;
-        }
       }
     `}
     ${media.lessThan('large')`
+      position: relative;
       text-align: center;
       margin-top: 15px;
       & > svg {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 45%;
+        z-index: -1;
+        width: 40px;
+        height: 40px;
       }
       a {
-        position: relative;
         display: inline-block;
         color: ${({theme}) => theme.colors.textColor};
         text-shadow: 1px 1px 1px ${({theme}) => theme.colors.white};
         font-size: 3rem;
         padding: 10px 0;
-        & > svg {
-          position: absolute;
-          top: 0;
-          left: -15px;
-          z-index: -1;
-          width: 40px;
-          height: 40px;
-        }
       }
     `}
     a {
@@ -137,7 +130,6 @@ const Navigation: React.FC = () => {
               hex={theme.colors.orange}
               to="/works"
             >
-              <WorksSvg />
               Works
             </AniLink>
           </Works>
@@ -148,7 +140,6 @@ const Navigation: React.FC = () => {
               hex={theme.colors.purple}
               to="/profile"
             >
-              <ProfileSvg />
               Profile
             </AniLink>
           </Profile>
@@ -159,7 +150,6 @@ const Navigation: React.FC = () => {
               hex={theme.colors.blue}
               to="/contact"
             >
-              <ContactSvg />
               Contact
             </AniLink>
           </Contact>

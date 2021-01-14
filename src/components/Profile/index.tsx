@@ -5,6 +5,7 @@ import mySkill from '../../../content/mySkill.json'
 import { detailContentsWrapper } from '../common/ContentsWrapper'
 import PrimaryHeading from '../common/PrimaryHeading'
 import ReturnButton from '../common/ReturnButton'
+import GithubIcon from '../../assets/img/ico_github.png'
 
 const ProfileContentsWrapper = styled(detailContentsWrapper)`
   background: ${({theme}) => theme.colors.purple};
@@ -70,7 +71,7 @@ const Profile: React.FC = () => {
       <SnsLinkList>
         <li>
           <a href="https://github.com/harutete" target="_blank">
-            <img src={'/ico_github.png'} alt="" />
+            <img src={GithubIcon} alt="" />
           </a>
         </li>
       </SnsLinkList>
