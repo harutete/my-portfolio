@@ -46,7 +46,7 @@ const SnsLinkList = styled(ToolList)`
   }
 `
 
-const Profile = () => {
+const Profile: React.FC = () => {
   return(
     <ProfileContentsWrapper>
       <PrimaryHeading>Profile</PrimaryHeading>

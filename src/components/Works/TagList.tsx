@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const TagsList = ({ data }) => {
+type Props = {
+  tags: {
+    color: string,
+    name: string
+  }[]
+}
+
+const TagsList: React.FC<Props> = ({ tags }) => {
   const List = styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +28,7 @@ const TagsList = ({ data }) => {
   })
   return (
     <List>
-      {data.map((tag, index) =>
+      {tags.map((tag, index) =>
         <li key={`tag_${index}`} style={tagStyle(tag.color)}>
           {tag.name}
         </li>
