@@ -67,13 +67,13 @@ const Profile: React.FC = () => {
           </>
         )}
       </SkillList>
-      <SnsLinkList>
+      {/* <SnsLinkList>
         <li>
           <a href="https://github.com/harutete" target="_blank">
             <img src={'/ico_github.png'} alt="" />
           </a>
         </li>
-      </SnsLinkList>
+      </SnsLinkList> */}
       <ReturnButton />
     </ProfileContentsWrapper>
   )
