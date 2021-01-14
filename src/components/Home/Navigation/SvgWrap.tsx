@@ -11,8 +11,8 @@ const SvgWrap: React.FC<Props> = (props) => {
   const Wrap = styled.svg`
     display: block;
   `
-  const SvgWidth = props.width || ''
-  const SvgHeight = props.height || ''
+  const SvgWidth = props.width || '0'
+  const SvgHeight = props.height || '0'
   const SvgViewBox = props.viewBox || '0, 0, 0, 0'
 
   return (
